@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8">
+	<meta author="kevy tian">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <title>腾讯视频下载</title>
+    <style>
+        #res {
+            display: inline-block;
+            width: 500px;
+            height: 30px;
+            font-size: 14px;
+            line-height: 30px;
+            padding: 0;
+        }
+ 
+        .container {
+            padding-top: 50px;
+        }
+ 
+        #qxd, #isVid {
+            display: inline-block;
+            width: 120px;
+            height: 30px;
+            font-size: 14px;
+            line-height: 30px;
+        }
+ 
+        #download {
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            font-size: 14px;
+            line-height: 25px;
+            text-align: center;
+            padding: 0;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p>首先在视频上<b>点击鼠标右键-->复制视频页面地址</b>，然后将复制的地址粘贴到下方输入框：</p>
+    <div>
+        <select id="isVid">
+            <option value="1" selected>视频页面地址</option>
+            <option value="2">视频vid</option>
+        </select>
+        <input id="res" type="text" placeholder="请输入视频链接"/>
+        <button id="download" class="btn btn-large btn-primary" type="button">获取下载地址</button>
+    </div>
+    <p style="width:100%;padding:20px;word-wrap:break-word;" id="result"></p>
+</div>
+<script type="text/javascript">
+    var bqApi = "http://vv.video.qq.com/getinfo?vids={vids}&platform=101001&charge=0&otype=json&defn=shd";
+    var downloadUrl = "";
+    var link = "";
+    var isVid = "";
+    var qxd = "";
+    var vids = "";
+    $("#download").click(function () {
+        link = $("#res").val();
+        qxd = $("#qxd").val();
+        isVid = $("#isVid").val();
+        if (isVid == "1") {
+            if (checkUrl(link)) {
+                vids = getVids(link);
+                process()
+            }
+            else {
+                alert("视频链接不正确");
+            }
+        }
+        else {
+            vids = link;
+            if (vids != "") {
+                process();
+            }
+        }
+    });
+    function checkUrl(url) {
+        var reg = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
+        if (url != "" && reg.test(url) && url.indexOf("page/") != -1 && url.indexOf(".html") != -1) {
+            return true;
+        }
+        return false;
+    }
+    function getVids(url) {
+        url = url.split(".html")[0].split("\/");
+        return url[url.length - 1];
+    }
+    function process() {
+        bqApi = bqApi.replaceAll("{vids}", vids);
+        var api1Json = {};
+        $.ajax({
+                type: "get",
+                url: bqApi,
+                dataType: "jsonp",
+                jsonpCallback: "cb",
+                success: function (data) {
+                    api1Json = data;
+                    downloadUrl = api1Json.vl.vi[0].ul.ui[0].url + api1Json.vl.vi[0].fn + "?vkey=" + api1Json.vl.vi[0].fvkey;
+                    $("#result").html("<span style='font-weight:bold;font-size:20px;'>下载方式：</span><br/>方式一：" + "<a target='_blank' href='" + downloadUrl + "'>点击此处</a>打开视频，在视频上右键另存为保存到本地。<br />方式二：如果您的浏览器比较新，直接<a href='javascript:void(0)' onclick='dw(\"" + downloadUrl + "\")'>点击此处</a>下载视频。");
+                }
+            });
+    }
+    function dw(url) {
+		try{
+			fetch(url).then(res => res.blob().then(blob => {
+				var a = document.createElement('a');
+				var url = window.URL.createObjectURL(blob);
+				a.href = url;
+				a.download = "kevy-download";
+				a.click();
+				window.URL.revokeObjectURL(url);
+			}));
+		}
+		catch(err){
+			alert("您的浏览器不支持该方式，请使用方式一");
+		}
+        
+    }
+</script>
+ 
+</body>
+</html>
