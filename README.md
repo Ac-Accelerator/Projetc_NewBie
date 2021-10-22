@@ -1,2 +1,2 @@
 # Projetc_NewBie
-This is a repository which is full of my easy program.
+我在大学初学编程的时候写的程序，记录我的成长足迹
