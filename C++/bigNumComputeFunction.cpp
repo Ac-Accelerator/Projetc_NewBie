@@ -1,8 +1,13 @@
+#include <algorithm>
 #include <iostream>
 using namespace std;
+string fastpow(string, string);
 string bigadd(string, string);
 string bigless(string, string);
 string bigmuit(string, string);
+string turnlongtostr(long long);
+long long turnstrtolong(string);
+bool dividedby2(string);
 string bigadd(string a, string b)
 {
 	int lena = a.length(), lenb = b.length(), jin = 0;
@@ -103,4 +108,41 @@ string bigmuit(string a, string b)
 			sums += (sum[lena + lenb - i - 1] + 48);
 	}
 	return sums;
+}
+string fastpow(string a, string b)
+{
+	if (b == "1")
+	{
+		return a;
+	}
+	if (b == "2")
+	{
+		return bigmuit(a, a);
+	}
+	if (dividedby2(b))
+	{
+		return bigmuit(a, fastpow(bigmuit(a, a), turnlongtostr(turnstrtolong(b) / 2)));
+	}
+	else
+		return fastpow(bigmuit(a, a), turnlongtostr(turnstrtolong(b) / 2));
+}
+string turnlongtostr(long long a)
+{
+	string d = "";
+	while (a != 0)
+	{
+		d += (a % 10) + '0';
+		a /= 10;
+	}
+	reverse(d.begin(), d.end());
+	return d;
+}
+long long turnstrtolong(string a)
+{
+	int out = 0;
+	for (int i = 0; i < a.length(); i++)
+	{
+		out = (a[i] - '0') + 10 * out;
+	}
+	return out;
 }
