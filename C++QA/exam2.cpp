@@ -2,42 +2,17 @@
 using namespace std;
 main()
 {
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++)
+    long long sign[41] = {0, 0,1,2};
+    for (int i = 4; i <= 40;i++)
     {
-        int n1;
-        cin >> n1;
-        int a[n1];
-        for (int p = 0; p < n1; p++)
-        {
-            cin >> a[p];
-        }
-        int n2;
-        cin >> n2;
-        int b[n2];
-        for (int p = 0; p < n2; p++)
-        {
-            cin >> b[p];
-        }
-        int j = 0, k = 0, out[n1 + n2];
-        for (int p = 0; p < n1 + n2;p++)
-        {
-            if (a[j] > b[k])
-            {
-                out[p] = b[k];
-                k++;
-            }
-            else {
-                out[p] = a[j];
-                j++;
-            }
-
-        }
-        for (int p = 0; p < n1 + n2-1;p++ )
-        {
-            cout << out[p] << ' ';
-        }
-        cout << out[n1 + n2 - 1] << endl;
+        sign[i] = sign[i - 1] + sign[i - 2];
+    }
+        int n;
+    cin >> n;
+    for (int p = 0; p < n;p++)
+    {
+        int a;
+        cin >> a;
+        cout << sign[a]<<endl;
     }
 }

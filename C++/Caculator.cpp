@@ -12,12 +12,13 @@ main()
     cout << "|      请输入数学表达式      |" << endl;
     cout << "|  样例输入:((2!+1)!+1)^2+3  |" << endl;
     cout << "----------------------------" << endl;
+    while (1)
     {
         cout << fixed << expression_value() << endl
              << "您可以继续输入计算" << endl;
         fflush(stdin);
     }
-system("pause")
+    system("pause");
 }
 long double expression_value() //算表达式
 {
