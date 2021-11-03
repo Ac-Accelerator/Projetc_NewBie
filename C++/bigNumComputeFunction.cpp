@@ -8,6 +8,7 @@ string bigmuit(string, string);
 string turnlongtostr(long long);
 long long turnstrtolong(string);
 bool dividedby2(string);
+string factorial(string);
 string bigadd(string a, string b)
 {
 	int lena = a.length(), lenb = b.length(), jin = 0;
@@ -145,4 +146,26 @@ long long turnstrtolong(string a)
 		out = (a[i] - '0') + 10 * out;
 	}
 	return out;
+}
+string factorial(string a)
+{
+	long long n= turnstrtolong(a);
+	string ans = "1";
+    for (int i = 1; i <= n; i++)
+    {
+        int jw = 0;
+        for (int j = ans.size() - 1; j >= 0; j--)
+        {
+            int n = (ans[j] - 48) * i + jw;
+            jw = n / 10;
+            n = n % 10;
+            ans[j] = n + 48;
+        }
+        while (jw)
+        {
+            ans = char(jw % 10 + 48) + ans;
+            jw /= 10;
+        }
+    }
+	return ans;
 }
