@@ -1,14 +1,14 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
-int N;
+int N,num=0;
 int queenpots[100];//存放放好的皇后的位置。第几行第几个
 void Nqueen(int );
 main()
 {   
     cin >> N;
     Nqueen(0);//从第0行开始摆放皇后
-    
+    cout << num;
 }
 void Nqueen(int k)//在0~k-1行皇后都已经摆好的情况下，摆第k行以及其后的皇后
 {
@@ -20,6 +20,7 @@ void Nqueen(int k)//在0~k-1行皇后都已经摆好的情况下，摆第k行以
             cout << queenpots[i] + 1 << ' ';
         }
         cout << endl;
+        num++;
         return;
     }
     for (i = 0; i < N;i++)//逐个尝试k个皇后的位置
