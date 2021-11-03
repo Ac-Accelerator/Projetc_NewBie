@@ -1,34 +1,63 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
-unsigned long long fast(unsigned long long, unsigned long long,unsigned long long);
+string factorial(long double n)
+{
+    string ans = "1";
+    long double result = 0;
+    for (int i = 1; i <= n; i++)
+    {
+
+        int jw = 0;
+        for (int j = ans.size() - 1; j >= 0; j--)
+        {
+            int n = (ans[j] - 48) * i + jw;
+            jw = n / 10;
+            n = n % 10;
+            ans[j] = n + 48;
+        }
+        while (jw)
+        {
+            ans = char(jw % 10 + 48) + ans;
+            jw /= 10;
+        }
+    }
+    
+    return ans;
+}
+string bigadd(string, string);
 main()
+{   
+    
+
+}
+string bigadd(string a, string b)
 {
-    int n;
-    cin >> n;
-    unsigned long long a, b, c;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a >> b >> c;
-        cout << fast(a, b,c)  << endl;
-    }
+	int lena = a.length(), lenb = b.length(), jin = 0;
+	int t = max(lena, lenb);
+	int sum[t + 1] = {0}, numa[t + 1] = {0}, numb[t + 1] = {0};
+	for (int i = lena - 1, j = 0; i >= 0; i--, j++)
+	{
+		numa[j] = a[i] - 48;
+	}
+	for (int i = lenb - 1, j = 0; i >= 0; i--, j++)
+	{
+		numb[j] = b[i] - 48;
+	}
+	for (int i = 0; i <= t; i++)
+	{
+		sum[i] = (numa[i] + numb[i] + jin) % 10;
+		jin = (numa[i] + numb[i] + jin) / 10;
+	}
+	string sums;
+	for (int i = 0; i < t + 1; i++)
+	{
+		if (sum[t - i] == 0 && i == 0)
+		{
+			continue;
+		}
+		sums += (sum[t - i] + 48);
+	}
+	return sums;
 }
-unsigned long long fast(unsigned long long a, unsigned long long b,unsigned long long c)
-{   if(b==0)
-{
-    return 1%c;
-}
-    if (b == 1)
-    {
-        return a%c;
-    }
-    if (b == 2)
-    {
-        return (a%c)*(a%c)%c;
-    }
-    if (b % 2)
-    {
-        return  fast((a%c)*(a%c), b / 2,999999999)*a%c;
-    }
-    else
-        return fast((a%c)*(a%c), b / 2,c);
-}
+

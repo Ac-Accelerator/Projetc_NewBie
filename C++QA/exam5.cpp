@@ -1,23 +1,35 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
+bool notpri[2147483648] = {1, 1};
+long long pri[21474];
 main()
 {
-    long long n,sum=0;
-    cin >> n;
-    long a[n];
-    for (int i = 0; i < n; i++)
+    int point = 0;
+    for (int i = 2; i < 2147483648; i++)
     {
-        cin >> a[i];
-    }
-    for (int i = 0; i < n-1;i++)
-    {
-        for (int j = i + 1; j < n;j++)
+        if (notpri[i])
         {
-            if(a[i]>a[j])
+            pri[point++];
+        }
+        for (int d = 1; d < 2147483648; d++)
+        {
+            if (i * pri[d] > 2147483648)
             {
-                sum++;
+                break;
+            }
+            notpri[i * pri[d]] = 1;
+            if(i%pri[d]==0)
+            {
+                break;
             }
         }
     }
-    cout << sum;
+    int n;
+    cin >> n;
+    if(notpri[abs(n)])
+    {
+        cout << "No";
+    }
+    else
+        cout << "Yes";
 }

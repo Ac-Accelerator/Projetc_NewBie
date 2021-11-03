@@ -1,18 +1,20 @@
+#include <iomanip>
 #include <iostream>
+#include <cmath>
 using namespace std;
 main()
 {
-    long long sign[41] = {0, 0,1,2};
-    for (int i = 4; i <= 40;i++)
+    double a,sum=0,num=1;
+    cin >> a;
+    while (true)
     {
-        sign[i] = sign[i - 1] + sign[i - 2];
+        sum += (1 / (num*2-1)) * pow(-1, num-1);
+        num++;
+        if ((1 / (num * 2 - 1))*4 < a)
+        {
+            break;
+        }
     }
-        int n;
-    cin >> n;
-    for (int p = 0; p < n;p++)
-    {
-        int a;
-        cin >> a;
-        cout << sign[a]<<endl;
-    }
+    sum *= 4;
+    cout << "Pi = " <<fixed<<setprecision(4)<<sum;
 }
