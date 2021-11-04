@@ -4,7 +4,6 @@ using namespace std;
 string factorial(long double n)
 {
     string ans = "1";
-    long double result = 0;
     for (int i = 1; i <= n; i++)
     {
 
@@ -22,7 +21,6 @@ string factorial(long double n)
             jw /= 10;
         }
     }
-    
     return ans;
 }
 string bigadd(string, string);
