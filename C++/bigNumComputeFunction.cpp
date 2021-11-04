@@ -141,7 +141,7 @@ string turnlongtostr(long long a)
 long long turnstrtolong(string a)
 {
 	int out = 0;
-	for (int i = 0; i < a.length(); i++)
+	for (unsigned long long i = 0; i < a.length(); i++)
 	{
 		out = (a[i] - '0') + 10 * out;
 	}
