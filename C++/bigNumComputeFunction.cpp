@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <iostream>
 using namespace std;
-string fastpow(string, string);
 string bigadd(string, string);
 string bigless(string, string);
 string bigmuit(string, string);
@@ -9,6 +8,7 @@ string turnlongtostr(long long);
 long long turnstrtolong(string);
 bool dividedby2(string);
 string factorial(string);
+string fastpow(string, string);
 string bigadd(string a, string b)
 {
 	int lena = a.length(), lenb = b.length(), jin = 0;
@@ -37,6 +37,11 @@ string bigadd(string a, string b)
 		sums += (sum[t - i] + 48);
 	}
 	return sums;
+}
+bool dividedby2(string a)
+{
+    int num = a[a.length() - 1];
+    return num % 2;
 }
 string bigless(string a, string b)
 {
@@ -149,23 +154,23 @@ long long turnstrtolong(string a)
 }
 string factorial(string a)
 {
-	long long n= turnstrtolong(a);
+	long long n = turnstrtolong(a);
 	string ans = "1";
-    for (int i = 1; i <= n; i++)
-    {
-        int jw = 0;
-        for (int j = ans.size() - 1; j >= 0; j--)
-        {
-            int n = (ans[j] - 48) * i + jw;
-            jw = n / 10;
-            n = n % 10;
-            ans[j] = n + 48;
-        }
-        while (jw)
-        {
-            ans = char(jw % 10 + 48) + ans;
-            jw /= 10;
-        }
-    }
+	for (int i = 1; i <= n; i++)
+	{
+		int jw = 0;
+		for (int j = ans.size() - 1; j >= 0; j--)
+		{
+			int n = (ans[j] - 48) * i + jw;
+			jw = n / 10;
+			n = n % 10;
+			ans[j] = n + 48;
+		}
+		while (jw)
+		{
+			ans = char(jw % 10 + 48) + ans;
+			jw /= 10;
+		}
+	}
 	return ans;
 }
