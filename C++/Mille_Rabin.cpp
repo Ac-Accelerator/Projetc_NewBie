@@ -29,9 +29,9 @@ long long mod_pow(long long a, long long n, long long mod)//快速幂取余
     }
     return ans;
 }
-bool Miller_Rabin(long long n)// Miller-Rabin随机算法检测n是否为素数
+bool Miller_Rabin(long long n,int rate)// Miller-Rabin随机算法检测n是否为素数,并且测试rate次
 {
-    srand((int)time(0));
+    srand((int)time(0));//产生随机数种子
     if (n == 2)//是2就返回true
         return true;
     if (n < 2 || !(n % 2))//小于2或者是2的倍数返回false
@@ -42,7 +42,7 @@ bool Miller_Rabin(long long n)// Miller-Rabin随机算法检测n是否为素数
         k++;
         m /=2;
     }
-    for (int i = 1; i <= 4; i++) // Miller-Rabin测试4次
+    for (int i = 1; i <= rate; i++) // Miller-Rabin测试rate次
     {
         long long a = rand() % (n - 1) + 1;//随机从[1,n-1]中选取a
         long long x = mod_pow(a, m, n);//求出(a^m)%n
@@ -54,8 +54,8 @@ bool Miller_Rabin(long long n)// Miller-Rabin随机算法检测n是否为素数
                 return false;
             x = y;//赋值并进行新一轮检验
         }
-        if (y != 1)//取遍后如果y=1,则是合数
+        if (y != 1)//取遍后如果y!=1,则是合数
             return false;
     }
-    return true;
+    return true;//检验过程中没有return false,数字n通过检验
 }
