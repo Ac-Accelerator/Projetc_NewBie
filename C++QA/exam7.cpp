@@ -1,42 +1,46 @@
 #include <iostream>
-#include <cstring>
 using namespace std;
-int N,num=0;
-int queenpots[100];//存放放好的皇后的位置。第几行第几个
-void Nqueen(int );
+
+int a[9][9];
+bool exist = 0;
 main()
-{   
-    cin >> N;
-    Nqueen(0);//从第0行开始摆放皇后
-    cout << num;
-}
-void Nqueen(int k)//在0~k-1行皇后都已经摆好的情况下，摆第k行以及其后的皇后
 {
-    int i;
-    if(k==N)//n个皇后已经摆好
+    int i, j;
+    for ( i = 0; i < 3; i++)
     {
-        if(num<3){for (i = 0; i < N;i++)
+        for ( j = 0; j < 3; j++)
         {
-            cout << queenpots[i] + 1 << ' ';
+            cin >> a[i][j];
         }
-        cout << endl;}
-        num++;
-        return;
     }
-    for (i = 0; i < N;i++)//逐个尝试k个皇后的位置
+    int max=0,min=0;
+    for (int p = 0; p < i;p++)
     {
-        int j;
-        for (j = 0; j < k;j++)//和已经摆好的k个皇后作比较，看是否冲突
+        for (int q = 0; q < j-1;q++)
         {
-            if(queenpots[j]==i||abs(queenpots[j]-i)==abs(k-j))//冲突的情况，break尝试下一次
+            if(a[p][q]<a[p][q+1])
             {
-                break;
+                max = q + 1;
             }
         }
-        if(j==k)//不冲突
+        int k;
+        for (k = 0; k < i-1 ;k++)
         {
-            queenpots[k] = i;//摆放
-            Nqueen(k + 1);//继续开始
+            if(a[k][max]>a[k+1][max])
+            {
+                min = k + 1;
+            }
         }
+        if(min==p)
+        {
+            cout << "Saddle point:a[" << min << "][" <<max << "]=" << a[min][max];
+            exist = 1;
+        }
+        max = 0;
+        min = 0;
+    }
+    if(!exist)
+    {
+        cout << "There is no saddle point";
     }
 }

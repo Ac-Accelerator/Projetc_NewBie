@@ -7,7 +7,7 @@
             "args": [
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "E:\\My Programs\\EXE\\dbg\\${fileBasenameNoExtension}.exe",
                 "-g",
                 "-Wall",
                 "-static-libgcc",
@@ -30,7 +30,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "E:\\My Programs\\EXE\\dbg\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"

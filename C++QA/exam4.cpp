@@ -1,61 +1,39 @@
+#include <cstdio>
 #include <iostream>
-#include <iomanip>
 using namespace std;
-string factorial(long double n)
+int isprime(int n)
 {
-    string ans = "1";
-    for (int i = 1; i <= n; i++)
+    int a = 1;
+    int i;
+    if (n == 1)
     {
-
-        int jw = 0;
-        for (int j = ans.size() - 1; j >= 0; j--)
-        {
-            int n = (ans[j] - 48) * i + jw;
-            jw = n / 10;
-            n = n % 10;
-            ans[j] = n + 48;
-        }
-        while (jw)
-        {
-            ans = char(jw % 10 + 48) + ans;
-            jw /= 10;
-        }
+        a = 0;
     }
-    return ans;
+    else
+        for (i = 2; i < n; i++)
+        {
+            if (n % i == 0)
+            {
+                a = a - 1;
+                break;
+            }
+        }
+    return a;
 }
-string bigadd(string, string);
-main()
-{   
-    
-
-}
-string bigadd(string a, string b)
+int main()
 {
-	int lena = a.length(), lenb = b.length(), jin = 0;
-	int t = max(lena, lenb);
-	int sum[t + 1] = {0}, numa[t + 1] = {0}, numb[t + 1] = {0};
-	for (int i = lena - 1, j = 0; i >= 0; i--, j++)
-	{
-		numa[j] = a[i] - 48;
-	}
-	for (int i = lenb - 1, j = 0; i >= 0; i--, j++)
-	{
-		numb[j] = b[i] - 48;
-	}
-	for (int i = 0; i <= t; i++)
-	{
-		sum[i] = (numa[i] + numb[i] + jin) % 10;
-		jin = (numa[i] + numb[i] + jin) / 10;
-	}
-	string sums;
-	for (int i = 0; i < t + 1; i++)
-	{
-		if (sum[t - i] == 0 && i == 0)
-		{
-			continue;
-		}
-		sums += (sum[t - i] + 48);
-	}
-	return sums;
-}
+    int i;
+    int c;
+    while (i <= 100)
+    {
+        c = isprime(i);
+        if (c == 0)
+        {
+            continue;
+        }
+        printf("%6d", i);
+        i++;
+    }
 
+    return 0;
+}
