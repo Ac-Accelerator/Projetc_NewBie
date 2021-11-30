@@ -1,15 +1,81 @@
 #include "goods.h"
-#include <algorithm>
-#include <fstream>
-#include <iomanip>
 #include <iostream>
+#include <fstream>
 #include <map>
+#include <algorithm>
+#include <iomanip>
 using namespace std;
 Goods::Goods(string G_class, string G_names, string G_brand, double G_prize, double G_num)
 {
     m_class = G_class, m_names = G_names, m_prize = G_prize, m_num = G_num, m_brand = G_brand;
 }
 Goods::Goods() {}
+Goods *Goods::G_Readd(long long *n) //载入数据done
+{
+    string Class, name, brand;
+    long long num, time;
+    double prize, cost;
+    fstream data("data", ios::in);
+    streambuf *oldin = cin.rdbuf(data.rdbuf());
+    cin >> *n; //读取数据大小
+    Goods *g = new Goods[*n];
+    for (int i = 0; i < *n; i++) //载入数据
+    {
+        cin >> Class >> name >> brand >> prize >> num >> time >> cost;
+        g[i].m_class = Class;
+        g[i].m_names = name;
+        g[i].m_brand = brand;
+        g[i].m_prize = prize;
+        g[i].m_num = num;
+        g[i].m_time = time;
+        g[i].m_cost = cost;
+    }
+    cin.rdbuf(oldin); //将输入指针返回给键盘
+    data.close();
+    return g;
+}
+Goods *Goods::G_Reads(long long *n) //读取统计done
+{
+    string Class, name, brand;
+    long long num;
+    fstream data("statistic", ios::in);
+    streambuf *oldin = cin.rdbuf(data.rdbuf());
+    cin >> *n; //读取数据大小
+    Goods *g = new Goods[*n];
+    for (int i = 0; i < *n; i++) //载入数据
+    {
+        cin >> Class >> name >> brand >> num;
+        g[i].m_class = Class;
+        g[i].m_names = name;
+        g[i].m_brand = brand;
+        g[i].m_num = num;
+    }
+    cin.rdbuf(oldin); //将输入指针返回给键盘
+    data.close();
+    return g;
+}
+Goods *Goods::G_Readl(long long *n)
+{
+    long long time, profit, num;
+    string Class, name;
+    fstream log("log", ios::in);
+    streambuf *oldin = cin.rdbuf(log.rdbuf());
+    cin >> *n; //读取数据大小
+    Goods *g = new Goods[*n];
+    for (int i = 0; i < *n; i++) //载入数据
+    {
+        cin >> time >> Class >> name >> profit >> num;
+        g[i].m_class = Class;
+        g[i].m_names = name;
+        g[i].m_time = time;
+        g[i].m_profit = profit;
+        g[i].m_num = num;
+    }
+    sort(g, g + *n, time_compare); //按时间排序
+    cin.rdbuf(oldin);              //将输入指针返回给键盘
+    log.close();
+    return g;
+}
 void Goods::G_Add() //添加，进货功能done
 {
     string Class, name, brand;
@@ -82,10 +148,10 @@ void Goods::G_Statistics() //刷新统计文件done
     cout.rdbuf(oldout);
     eco.close();
     cout << "数据库已更新" << endl;
-    cout << "类别" << ' ' << "名称" << ' ' << "品牌" << ' ' << "数量" << endl;
+    cout << setw(15) << left << "类别" << setw(15) << left << "名称" << setw(15) << left << "品牌" << setw(15) << left << "数量" << endl;
     for (int i = 0; i < point; i++)
     {
-        cout << lastcache[i].Class << ' ' << lastcache[i].name << ' ' << lastcache[i].brand << ' ' << lastcache[i].numb << endl;
+        cout << setw(15) << left << lastcache[i].Class << setw(15) << left << lastcache[i].name << setw(15) << left << lastcache[i].brand << setw(15) << left << lastcache[i].numb << endl;
     }
     delete[] g;
     delete[] lastcache;
@@ -105,7 +171,7 @@ void Goods::G_Out() //出货功能done
     {
         if (t[i].m_class == Class && t[i].m_names == name)
         {
-            num = t[i].m_num;
+            num += t[i].m_num;
         }
     }
     if (num != 0)
@@ -125,7 +191,7 @@ void Goods::G_Out() //出货功能done
                 cout << "请输入出货日期:";
                 cin >> time;
                 Goods *g = G_Readd(&n);
-                bool *sign = new bool[n]{0}; //用作标记数组，数值为0保持不变，数值为1删除，数值为2修改。
+                bool *sign = new bool[n]{0}; //用作标记数组，数值为0保持不变，数值为1删
                 long long deletenum = 0;
                 double money = 0;
                 for (int i = 0; i < n; i++)
@@ -135,13 +201,13 @@ void Goods::G_Out() //出货功能done
                         if (g[i].m_num <= outnums)
                         {
                             sign[i] = 1;
-                            money += g[i].m_cost * m_num;
+                            money += (g[i].m_prize-g[i].m_cost) * m_num;
                             deletenum++;
                             outnums -= g[i].m_num;
                         }
                         else
                         {
-                            money += g[i].m_cost * outnums;
+                            money += (g[i].m_prize-g[i].m_cost) * outnums;
                             g[i].m_num -= outnums;
                             break;
                         }
@@ -311,10 +377,10 @@ void Goods::G_Search() //查找功能done
                 else
                 {
                     cout << "查询到" << num << "条信息,如下" << endl;
-                    cout << "类型" << ' ' << "名称" << ' ' << "品牌" << ' ' << "价格" << ' ' << "库存" << ' ' << "进货日期" << ' ' << "成本" << endl;
+                    cout << setw(15) << left << "类型" << setw(15) << left << "名称" << setw(15) << left << "品牌" << setw(15) << left << "价格" << setw(15) << left << "库存" << setw(15) << left << "进货日期" << setw(15) << left << "成本" << endl;
                     for (int i = 0; i < point; i++)
                     {
-                        cout << cache[i].m_class << ' ' << cache[i].m_names << ' ' << cache[i].m_brand << ' ' << cache[i].m_prize << ' ' << cache[i].m_num << ' ' << cache[i].m_time << ' ' << cache[i].m_cost << endl;
+                        cout << setw(15) << left << cache[i].m_class << setw(15) << left << cache[i].m_names << setw(15) << left << cache[i].m_brand << setw(15) << left << cache[i].m_prize << setw(15) << left << cache[i].m_num << setw(15) << left << cache[i].m_time << setw(15) << left << cache[i].m_cost << endl;
                     }
                 }
                 cout << "信息显示完毕（您可以继续输入内容来检索，或输入#返回菜单）" << endl;
@@ -345,9 +411,22 @@ void Goods::G_Profit()
     else
     {
         cout << "请输入你要统计的时间范围\n已经记载的时间范围是" << fixed << setprecision(0) << l[0].m_time << '-' << l[n - 1].m_time << endl;
-        cin >> time1 >> time2;
+        cout << "请输入时间下限:";
+        cin >> time1;
+        cout << "请输入时间上限:";
+        cin >> time2;
+        if (time1 > time2)
+        {
+            cout << "错误";
+        }
         for (int i = 0; i < n; i++)
         {
+            if (time1 > time2)
+            {
+                cout << "错误"<<endl;
+                system("pause");
+                break;
+            }
             if (l[i].m_time >= time1)
             {
                 string cache;
@@ -365,18 +444,14 @@ void Goods::G_Profit()
                     newlist[pointlist[cache]].m_names = l[i].m_names;
                     newlist[pointlist[cache]].m_profit = l[i].m_profit;
                 }
-                if (l[i + 1].m_time > time2)
-                {
-                    break;
-                }
             }
         }
         sort(newlist, newlist + point, profit_compare);
         cout << "查询到以下" << point << "个信息" << endl;
-        cout << "类型  名称  销量  利润\n";
+        cout << setw(15) << left << "类型" << setw(15) << left << "名称" << setw(15) << left << "销量" << setw(15) << left << "利润"<<endl;
         for (int i = 0; i < point; i++)
         {
-            cout << newlist[i].m_class << ' ' << newlist[i].m_names << ' ' << newlist[i].m_num << ' ' << newlist[i].m_profit << endl;
+            cout << setw(15)<<left << newlist[i].m_class << setw(15) << left << newlist[i].m_names << setw(15) << left << newlist[i].m_num << setw(15) << left << newlist[i].m_profit << endl;
         }
         cout << "信息显示结束" << endl;
     }
@@ -407,14 +482,14 @@ void Goods::G_Change()
     cin >> time;
     bool exist = 0;
     Goods *g = G_Readd(&n);
-    bool *sign = new bool[n]{0};
+    bool *sign = new bool[n];
     int deletenum = 0;
     for (int i = 0; i < n; i++)
     {
         if (g[i].m_class == Class && g[i].m_names == name && g[i].m_brand == brand && g[i].m_time == time)
         {
             cout << "已经查询到相关商品:\n";
-            cout << g[i].m_class << ' ' << g[i].m_names << ' ' << g[i].m_brand << ' ' << g[i].m_prize << ' ' << g[i].m_num << ' ' << g[i].m_time << ' ' << g[i].m_cost << endl;
+            cout << setw(15) << left << g[i].m_class << setw(15) << left << g[i].m_names << setw(15) << left << g[i].m_brand << setw(15) << left << g[i].m_prize << setw(15) << left << g[i].m_num << setw(15) << left << g[i].m_time << setw(15) << left << g[i].m_cost << endl;
             exist = 1;
             cout << "请更新数据：类别 名称 品牌 价格 数量 进货时间 成本\n";
             cin >> g[i].m_class >> g[i].m_names >> g[i].m_brand >> g[i].m_prize >> g[i].m_num >> g[i].m_time >> g[i].m_cost;
@@ -446,7 +521,6 @@ void Goods::G_Change()
         cout.rdbuf(oldout);
         cout << "所有信息修改完毕\n";
     }
-
     system("pause");
     system("cls");
     delete[] sign;

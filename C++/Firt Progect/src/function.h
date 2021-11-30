@@ -1,5 +1,4 @@
 #pragma once
-#include "goods.h"
 void initial_data();
 void initial_statistic();
 void initial_log();

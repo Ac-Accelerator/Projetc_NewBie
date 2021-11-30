@@ -2,6 +2,7 @@
 #include <fstream>
 #include <algorithm>
 #include "function.h"
+#include "goods.h"
 using namespace std;
 void initial_data()
 {
@@ -38,72 +39,6 @@ void initial_log()
         cout.rdbuf(oldout);
     }
     lexist.close();
-}
-Goods *Goods::G_Readd(long long *n) //载入数据done
-{
-    string Class, name, brand;
-    long long num, time;
-    double prize, cost;
-    fstream data("data", ios::in);
-    streambuf *oldin = cin.rdbuf(data.rdbuf());
-    cin >> *n; //读取数据大小
-    Goods *g = new Goods[*n];
-    for (int i = 0; i < *n; i++) //载入数据
-    {
-        cin >> Class >> name >> brand >> prize >> num >> time >> cost;
-        g[i].m_class = Class;
-        g[i].m_names = name;
-        g[i].m_brand = brand;
-        g[i].m_prize = prize;
-        g[i].m_num = num;
-        g[i].m_time = time;
-        g[i].m_cost = cost;
-    }
-    cin.rdbuf(oldin); //将输入指针返回给键盘
-    data.close();
-    return g;
-}
-Goods *Goods::G_Reads(long long *n) //读取统计done
-{
-    string Class, name, brand;
-    long long num;
-    fstream data("statistic", ios::in);
-    streambuf *oldin = cin.rdbuf(data.rdbuf());
-    cin >> *n; //读取数据大小
-    Goods *g = new Goods[*n];
-    for (int i = 0; i < *n; i++) //载入数据
-    {
-        cin >> Class >> name >> brand >> num;
-        g[i].m_class = Class;
-        g[i].m_names = name;
-        g[i].m_brand = brand;
-        g[i].m_num = num;
-    }
-    cin.rdbuf(oldin); //将输入指针返回给键盘
-    data.close();
-    return g;
-}
-Goods *Goods::G_Readl(long long *n)
-{
-    long long time, profit, num;
-    string Class, name;
-    fstream log("log", ios::in);
-    streambuf *oldin = cin.rdbuf(log.rdbuf());
-    cin >> *n; //读取数据大小
-    Goods *g = new Goods[*n];
-    for (int i = 0; i < *n; i++) //载入数据
-    {
-        cin >> time >> Class >> name >> profit >> num;
-        g[i].m_class = Class;
-        g[i].m_names = name;
-        g[i].m_time = time;
-        g[i].m_profit = profit;
-        g[i].m_num = num;
-    }
-    sort(g, g + *n, time_compare); //按时间排序
-    cin.rdbuf(oldin);              //将输入指针返回给键盘
-    log.close();
-    return g;
 }
 int menu_out()
 {
