@@ -1,39 +1,40 @@
-#include <cstdio>
+#include <cstring>
 #include <iostream>
 using namespace std;
-int isprime(int n)
+int indexff[1111]={0};int datass[1111]={0};
+main()
 {
-    int a = 1;
-    int i;
-    if (n == 1)
+    
+    int t;
+    cin >> t;
+    for (int i = 0; i < t; i++)
     {
-        a = 0;
-    }
-    else
-        for (i = 2; i < n; i++)
+        int lelele = -10;
+        if (i != 0)
         {
-            if (n % i == 0)
+            cout << '\n';
+        }
+        int n;
+        cin >> n;
+        for (int j = 1; j <= n; j++)
+        {
+            cin >> datass[j];
+            indexff[j] = 1;
+        }
+        for (int j = 1; j <= n;j++)
+        {
+            for (int k = 1; k <= j;k++)
             {
-                a = a - 1;
-                break;
+                if(datass[k]<datass[j])
+                {
+                    indexff[j] = max(indexff[j], indexff[k] + 1);
+                }
             }
         }
-    return a;
-}
-int main()
-{
-    int i;
-    int c;
-    while (i <= 100)
-    {
-        c = isprime(i);
-        if (c == 0)
+        for (int j = 1; j <= n;j++)
         {
-            continue;
+            lelele = max(lelele, indexff[j]);
         }
-        printf("%6d", i);
-        i++;
+        cout << lelele<<endl;
     }
-
-    return 0;
 }

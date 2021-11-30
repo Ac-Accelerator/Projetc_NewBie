@@ -1,56 +1,25 @@
 #include <iostream>
+#include <map>
 using namespace std;
-long long sum = 0;
-void guibing(long long a[], long long s, long long m, long long e, long long cache[])
+map<char, bool> chars;
+int main()
 {
-    long long p = 0;
-    long long i = s, j = m + 1;
-    while (i <= m && j <= e)
+    string a, b;
+    while (getline(cin, a) && getline(cin, b))
     {
-        if (a[i] > a[j])//改变了这个符号，使它由大到小排列。
+        int al = a.size();
+        int bl = b.size();
+        for (int i = 0; i < bl; i++)
         {
-            sum += e - j + 1;//另外增加这一行，每执行此判断语句都可以加上此数对应的逆序数。
-            cache[p++] = a[i++];
+            chars[b[i]] = 1;
         }
-        else
+        for (int i = 0; i < al; i++)
         {
-            
-            cache[p++] = a[j++];
+            if (chars[a[i]])
+                continue;
+            cout << a[i];
         }
+        cout << endl;
+        chars.clear();
     }
-    while (i <= m)
-    {
-        cache[p++] = a[i++];
-    }
-    while (j <= e)
-    {
-        cache[p++] = a[j++];
-    }
-    for (long long i = 0; i < e - s + 1; i++)
-    {
-        a[s + i] = cache[i];
-    }
-}
-void fenzhipaixu(long long a[], long long s, long long e, long long cache[])
-{
-    if (s < e)
-    {
-        long long m = s + (e - s) / 2;
-        fenzhipaixu(a, s, m, cache);
-        fenzhipaixu(a, m + 1, e, cache);
-        guibing(a, s, m, e, cache);
-    }
-}
-long long cache[1000009];
-main()
-{
-    long long n;
-    cin >> n;
-    long long a[n+10];
-    for (long long i = 0; i < n; i++)
-    {
-        cin >> a[i];
-    }
-    fenzhipaixu(a, 0, n - 1, cache);
-    cout << sum;
 }

@@ -1,33 +1,19 @@
-
-#include <stdio.h>
-# include <string.h>
-# define MAXLINE 80
-void encrypt ( char *s);
-int main (void)
+#include <iostream>
+using namespace std;
+class Test
 {
-   char line [MAXLINE];
-
-   gets(line);
-   encrypt (line);
-   printf ("%s\n", line);
-     return 0;
+public:
+	Test() { cout << "构造函数" << endl; }
+	~Test() { cout << "析构函数" << endl; }
+};
+void myfunc()
+{
+	Test obj;
 }
-
-
-/* 请在这里填写答案 */
-void encrypt ( char *s)
+int main()
 {
-    for (int i = 0; i < 80;i++)
-    {
-        if(s[i]==0)
-        {
-            break;
-        }
-        if(s[i]=='z')
-        {
-            s[i] = 'a';
-        }
-        else
-            s[i] += 1;
-    }
+	cout << "main开始" << endl;
+	myfunc();
+	cout << "main结束" << endl;
+	return 0;
 }

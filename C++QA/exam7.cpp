@@ -1,46 +1,26 @@
 #include <iostream>
 using namespace std;
-
-int a[9][9];
-bool exist = 0;
 main()
 {
-    int i, j;
-    for ( i = 0; i < 3; i++)
+    int n, c;
+    while(cin>>n>>c)
     {
-        for ( j = 0; j < 3; j++)
+        int weight[n] = {0}, value[n] = {0}, sum[n*n] = {0};
+        for (int i = 0; i < n;i++)
         {
-            cin >> a[i][j];
+            cin >> weight[i];
         }
-    }
-    int max=0,min=0;
-    for (int p = 0; p < i;p++)
-    {
-        for (int q = 0; q < j-1;q++)
+        for (int i = 0; i < n;i++)
         {
-            if(a[p][q]<a[p][q+1])
+            cin >> value[i];
+        }
+        for (int i = 0; i < n;i++)
+        {
+            for (int k = c; k >= weight[i];k--)
             {
-                max = q + 1;
+                sum[k] = max(sum[k], sum[k - weight[i]] + value[i]);
             }
         }
-        int k;
-        for (k = 0; k < i-1 ;k++)
-        {
-            if(a[k][max]>a[k+1][max])
-            {
-                min = k + 1;
-            }
-        }
-        if(min==p)
-        {
-            cout << "Saddle point:a[" << min << "][" <<max << "]=" << a[min][max];
-            exist = 1;
-        }
-        max = 0;
-        min = 0;
-    }
-    if(!exist)
-    {
-        cout << "There is no saddle point";
+        cout << sum[c] << endl;
     }
 }
