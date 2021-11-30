@@ -1,9 +1,9 @@
 #include "goods.h"
-#include <iostream>
-#include <fstream>
-#include <map>
 #include <algorithm>
+#include <fstream>
 #include <iomanip>
+#include <iostream>
+#include <map>
 using namespace std;
 Goods::Goods(string G_class, string G_names, string G_brand, double G_prize, double G_num)
 {
@@ -407,7 +407,7 @@ void Goods::G_Change()
     cin >> time;
     bool exist = 0;
     Goods *g = G_Readd(&n);
-    bool *sign = new bool[n];
+    bool *sign = new bool[n]{0};
     int deletenum = 0;
     for (int i = 0; i < n; i++)
     {
@@ -446,6 +446,7 @@ void Goods::G_Change()
         cout.rdbuf(oldout);
         cout << "所有信息修改完毕\n";
     }
+
     system("pause");
     system("cls");
     delete[] sign;
