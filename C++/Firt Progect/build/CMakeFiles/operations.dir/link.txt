@@ -1,0 +1,3 @@
+"D:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\operations.dir/objects.a
+D:\msys64\mingw64\bin\ar.exe qc CMakeFiles\operations.dir/objects.a @CMakeFiles\operations.dir\objects1.rsp
+D:\msys64\mingw64\bin\g++.exe -Os -DNDEBUG -shared -o liboperations.dll -Wl,--out-implib,liboperations.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\operations.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\operations.dir\linklibs.rsp

@@ -1,0 +1,17 @@
+[
+{
+  "directory": "E:/My Programs/Projetc_NewBie/C++/Firt Progect/build",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -Doperations_EXPORTS @CMakeFiles/operations.dir/includes_CXX.rsp -Os -DNDEBUG -o CMakeFiles\\operations.dir\\src\\goods.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\Firt Progect\\src\\goods.cpp\"",
+  "file": "E:/My Programs/Projetc_NewBie/C++/Firt Progect/src/goods.cpp"
+},
+{
+  "directory": "E:/My Programs/Projetc_NewBie/C++/Firt Progect/build",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -Doperations_EXPORTS @CMakeFiles/operations.dir/includes_CXX.rsp -Os -DNDEBUG -o CMakeFiles\\operations.dir\\src\\function.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\Firt Progect\\src\\function.cpp\"",
+  "file": "E:/My Programs/Projetc_NewBie/C++/Firt Progect/src/function.cpp"
+},
+{
+  "directory": "E:/My Programs/Projetc_NewBie/C++/Firt Progect/build",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/outcome.dir/includes_CXX.rsp -Os -DNDEBUG -o CMakeFiles\\outcome.dir\\src\\main.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\Firt Progect\\src\\main.cpp\"",
+  "file": "E:/My Programs/Projetc_NewBie/C++/Firt Progect/src/main.cpp"
+}
+]
