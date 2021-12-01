@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <iomanip>
 using namespace std;
-Goods::Goods(string G_class, string G_names, string G_brand, double G_prize, double G_num)
+Goods::Goods(string G_class, string G_names, string G_brand, double G_prize, double G_num=0)
 {
     m_class = G_class, m_names = G_names, m_prize = G_prize, m_num = G_num, m_brand = G_brand;
 }
