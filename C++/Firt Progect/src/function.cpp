@@ -6,7 +6,7 @@
 using namespace std;
 void initial_data()
 {
-    fstream exist("data");
+    fstream exist("data");//
     if (!exist.good())
     {
         fstream exist("data", ios::out);
