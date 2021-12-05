@@ -1,3 +1,0 @@
-"D:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\outcome.dir/objects.a
-D:\msys64\mingw64\bin\ar.exe qc CMakeFiles\outcome.dir/objects.a @CMakeFiles\outcome.dir\objects1.rsp
-D:\msys64\mingw64\bin\g++.exe -Os -DNDEBUG -Wl,--whole-archive CMakeFiles\outcome.dir/objects.a -Wl,--no-whole-archive -o outcome.exe -Wl,--out-implib,liboutcome.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\outcome.dir\linklibs.rsp

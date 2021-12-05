@@ -1,0 +1,4 @@
+E:/My Programs/Projetc_NewBie/C++/Inventory Management System/build/CMakeFiles/operations.dir
+E:/My Programs/Projetc_NewBie/C++/Inventory Management System/build/CMakeFiles/Inventory_management_system.dir
+E:/My Programs/Projetc_NewBie/C++/Inventory Management System/build/CMakeFiles/edit_cache.dir
+E:/My Programs/Projetc_NewBie/C++/Inventory Management System/build/CMakeFiles/rebuild_cache.dir

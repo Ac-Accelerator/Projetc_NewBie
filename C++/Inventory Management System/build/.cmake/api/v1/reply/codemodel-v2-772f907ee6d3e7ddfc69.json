@@ -1,0 +1,65 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Goods_Project",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Inventory_management_system::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Inventory_management_system-Debug-8112fdee8e164f4feb66.json",
+					"name" : "Inventory_management_system",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "operations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-operations-Debug-0ac18f79ec4beed26d2c.json",
+					"name" : "operations",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/My Programs/Projetc_NewBie/C++/Inventory Management System/build",
+		"source" : "E:/My Programs/Projetc_NewBie/C++/Inventory Management System"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -1,4 +1,0 @@
-E:/My Programs/Projetc_NewBie/C++/Firt Progect/build/CMakeFiles/operations.dir
-E:/My Programs/Projetc_NewBie/C++/Firt Progect/build/CMakeFiles/outcome.dir
-E:/My Programs/Projetc_NewBie/C++/Firt Progect/build/CMakeFiles/edit_cache.dir
-E:/My Programs/Projetc_NewBie/C++/Firt Progect/build/CMakeFiles/rebuild_cache.dir
