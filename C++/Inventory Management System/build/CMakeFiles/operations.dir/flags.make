@@ -6,5 +6,5 @@ CXX_DEFINES = -Doperations_EXPORTS
 
 CXX_INCLUDES = @CMakeFiles/operations.dir/includes_CXX.rsp
 
-CXX_FLAGS = -g
+CXX_FLAGS = -Os -DNDEBUG
 

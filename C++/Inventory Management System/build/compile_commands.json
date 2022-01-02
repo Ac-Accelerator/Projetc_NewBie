@@ -1,17 +1,17 @@
 [
 {
   "directory": "E:/My Programs/Projetc_NewBie/C++/Inventory Management System/build",
-  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -Doperations_EXPORTS @CMakeFiles/operations.dir/includes_CXX.rsp -g -o CMakeFiles\\operations.dir\\src\\goods.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\Inventory Management System\\src\\goods.cpp\"",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -Doperations_EXPORTS @CMakeFiles/operations.dir/includes_CXX.rsp -Os -DNDEBUG -o CMakeFiles\\operations.dir\\src\\goods.cpp.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\Inventory Management System\\src\\goods.cpp\"",
   "file": "E:/My Programs/Projetc_NewBie/C++/Inventory Management System/src/goods.cpp"
 },
 {
   "directory": "E:/My Programs/Projetc_NewBie/C++/Inventory Management System/build",
-  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -Doperations_EXPORTS @CMakeFiles/operations.dir/includes_CXX.rsp -g -o CMakeFiles\\operations.dir\\src\\function.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\Inventory Management System\\src\\function.cpp\"",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -Doperations_EXPORTS @CMakeFiles/operations.dir/includes_CXX.rsp -Os -DNDEBUG -o CMakeFiles\\operations.dir\\src\\function.cpp.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\Inventory Management System\\src\\function.cpp\"",
   "file": "E:/My Programs/Projetc_NewBie/C++/Inventory Management System/src/function.cpp"
 },
 {
   "directory": "E:/My Programs/Projetc_NewBie/C++/Inventory Management System/build",
-  "command": "D:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Inventory_management_system.dir/includes_CXX.rsp -g -o CMakeFiles\\Inventory_management_system.dir\\src\\main.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\Inventory Management System\\src\\main.cpp\"",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Inventory_management_system.dir/includes_CXX.rsp -Os -DNDEBUG -o CMakeFiles\\Inventory_management_system.dir\\src\\main.cpp.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\Inventory Management System\\src\\main.cpp\"",
   "file": "E:/My Programs/Projetc_NewBie/C++/Inventory Management System/src/main.cpp"
 }
 ]

@@ -2,10 +2,13 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Inventory_management_system.exe"
+			"path" : "liboperations.dll"
 		},
 		{
-			"path" : "Inventory_management_system.pdb"
+			"path" : "liboperations.dll.a"
+		},
+		{
+			"path" : "liboperations.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -13,8 +16,8 @@
 	{
 		"commands" : 
 		[
-			"add_executable",
-			"target_link_libraries"
+			"add_library",
+			"target_include_directories"
 		],
 		"files" : 
 		[
@@ -28,13 +31,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 5,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 10,
+				"line" : 7,
 				"parent" : 0
 			}
 		]
@@ -45,7 +48,13 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-Os -DNDEBUG"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "operations_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -58,34 +67,19 @@
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "operations::@6890427a1f51a3e7e1df"
-		}
-	],
-	"id" : "Inventory_management_system::@6890427a1f51a3e7e1df",
+	"id" : "operations::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
-			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "liboperations.dll.a",
-				"role" : "libraries"
 			},
 			{
 				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
@@ -94,8 +88,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Inventory_management_system",
-	"nameOnDisk" : "Inventory_management_system.exe",
+	"name" : "operations",
+	"nameOnDisk" : "liboperations.dll",
 	"paths" : 
 	{
 		"build" : ".",
@@ -107,7 +101,8 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -116,9 +111,15 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/main.cpp",
+			"path" : "src/goods.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/function.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "SHARED_LIBRARY"
 }

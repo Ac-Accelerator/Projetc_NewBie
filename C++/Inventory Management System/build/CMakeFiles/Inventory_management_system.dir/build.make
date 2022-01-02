@@ -68,29 +68,29 @@ include CMakeFiles/Inventory_management_system.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Inventory_management_system.dir/flags.make
 
-CMakeFiles/Inventory_management_system.dir/src/main.obj: CMakeFiles/Inventory_management_system.dir/flags.make
-CMakeFiles/Inventory_management_system.dir/src/main.obj: CMakeFiles/Inventory_management_system.dir/includes_CXX.rsp
-CMakeFiles/Inventory_management_system.dir/src/main.obj: ../src/main.cpp
-CMakeFiles/Inventory_management_system.dir/src/main.obj: CMakeFiles/Inventory_management_system.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\My Programs\Projetc_NewBie\C++\Inventory Management System\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Inventory_management_system.dir/src/main.obj"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Inventory_management_system.dir/src/main.obj -MF CMakeFiles\Inventory_management_system.dir\src\main.obj.d -o CMakeFiles\Inventory_management_system.dir\src\main.obj -c "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\main.cpp"
+CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj: CMakeFiles/Inventory_management_system.dir/flags.make
+CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj: CMakeFiles/Inventory_management_system.dir/includes_CXX.rsp
+CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj: ../src/main.cpp
+CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj: CMakeFiles/Inventory_management_system.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\My Programs\Projetc_NewBie\C++\Inventory Management System\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj -MF CMakeFiles\Inventory_management_system.dir\src\main.cpp.obj.d -o CMakeFiles\Inventory_management_system.dir\src\main.cpp.obj -c "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\main.cpp"
 
-CMakeFiles/Inventory_management_system.dir/src/main.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Inventory_management_system.dir/src/main.i"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\main.cpp" > CMakeFiles\Inventory_management_system.dir\src\main.i
+CMakeFiles/Inventory_management_system.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Inventory_management_system.dir/src/main.cpp.i"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\main.cpp" > CMakeFiles\Inventory_management_system.dir\src\main.cpp.i
 
-CMakeFiles/Inventory_management_system.dir/src/main.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Inventory_management_system.dir/src/main.s"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\main.cpp" -o CMakeFiles\Inventory_management_system.dir\src\main.s
+CMakeFiles/Inventory_management_system.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Inventory_management_system.dir/src/main.cpp.s"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\main.cpp" -o CMakeFiles\Inventory_management_system.dir\src\main.cpp.s
 
 # Object files for target Inventory_management_system
 Inventory_management_system_OBJECTS = \
-"CMakeFiles/Inventory_management_system.dir/src/main.obj"
+"CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj"
 
 # External object files for target Inventory_management_system
 Inventory_management_system_EXTERNAL_OBJECTS =
 
-Inventory_management_system.exe: CMakeFiles/Inventory_management_system.dir/src/main.obj
+Inventory_management_system.exe: CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj
 Inventory_management_system.exe: CMakeFiles/Inventory_management_system.dir/build.make
 Inventory_management_system.exe: liboperations.dll.a
 Inventory_management_system.exe: CMakeFiles/Inventory_management_system.dir/linklibs.rsp

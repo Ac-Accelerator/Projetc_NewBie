@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 3.22)
 #工程名字Goods_Project
 project(Goods_Project)
 #新建名字为operation的动态库,包含先对路径下的两个源文件

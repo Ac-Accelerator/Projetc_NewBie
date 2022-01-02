@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/operations.dir/src/function.obj"
-  "CMakeFiles/operations.dir/src/function.obj.d"
-  "CMakeFiles/operations.dir/src/goods.obj"
-  "CMakeFiles/operations.dir/src/goods.obj.d"
+  "CMakeFiles/operations.dir/src/function.cpp.obj"
+  "CMakeFiles/operations.dir/src/function.cpp.obj.d"
+  "CMakeFiles/operations.dir/src/goods.cpp.obj"
+  "CMakeFiles/operations.dir/src/goods.cpp.obj.d"
   "liboperations.dll"
   "liboperations.dll.a"
   "liboperations.dll.manifest"

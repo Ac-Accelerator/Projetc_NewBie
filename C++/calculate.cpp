@@ -8,7 +8,7 @@ long double factorial(long double);
 main()
 {
     cout << "-----------------------------" << endl;
-    cout << "|  欢迎使用高级计算器(精度8) |" << endl;
+    cout << "|  欢迎使用高级计算器(精度8)  |" << endl;
     cout << "|      请输入数学表达式      |" << endl;
     cout << "|  样例输入:((2!+1)!+1)^2+3  |" << endl;
     cout << "----------------------------" << endl;

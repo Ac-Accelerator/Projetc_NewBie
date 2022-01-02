@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "E:/My Programs/Projetc_NewBie/C++/Inventory Management System/src/function.cpp" "CMakeFiles/operations.dir/src/function.obj" "gcc" "CMakeFiles/operations.dir/src/function.obj.d"
-  "E:/My Programs/Projetc_NewBie/C++/Inventory Management System/src/goods.cpp" "CMakeFiles/operations.dir/src/goods.obj" "gcc" "CMakeFiles/operations.dir/src/goods.obj.d"
+  "E:/My Programs/Projetc_NewBie/C++/Inventory Management System/src/function.cpp" "CMakeFiles/operations.dir/src/function.cpp.obj" "gcc" "CMakeFiles/operations.dir/src/function.cpp.obj.d"
+  "E:/My Programs/Projetc_NewBie/C++/Inventory Management System/src/goods.cpp" "CMakeFiles/operations.dir/src/goods.cpp.obj" "gcc" "CMakeFiles/operations.dir/src/goods.cpp.obj.d"
   )
 
 # Targets to which this target links.

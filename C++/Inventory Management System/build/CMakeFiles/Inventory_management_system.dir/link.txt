@@ -1,3 +1,3 @@
 "D:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Inventory_management_system.dir/objects.a
 D:\msys64\mingw64\bin\ar.exe qc CMakeFiles\Inventory_management_system.dir/objects.a @CMakeFiles\Inventory_management_system.dir\objects1.rsp
-D:\msys64\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Inventory_management_system.dir/objects.a -Wl,--no-whole-archive -o Inventory_management_system.exe -Wl,--out-implib,libInventory_management_system.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Inventory_management_system.dir\linklibs.rsp
+D:\msys64\mingw64\bin\g++.exe -Os -DNDEBUG -Wl,--whole-archive CMakeFiles\Inventory_management_system.dir/objects.a -Wl,--no-whole-archive -o Inventory_management_system.exe -Wl,--out-implib,libInventory_management_system.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Inventory_management_system.dir\linklibs.rsp

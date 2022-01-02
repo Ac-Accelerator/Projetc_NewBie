@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Inventory_management_system.dir/src/main.obj"
-  "CMakeFiles/Inventory_management_system.dir/src/main.obj.d"
+  "CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj"
+  "CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj.d"
   "Inventory_management_system.exe"
   "Inventory_management_system.exe.manifest"
   "Inventory_management_system.pdb"

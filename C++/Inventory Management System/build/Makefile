@@ -141,50 +141,77 @@ Inventory_management_system/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Inventory_management_system.dir\build.make CMakeFiles/Inventory_management_system.dir/build
 .PHONY : Inventory_management_system/fast
 
-# target to build an object file
-src/function.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/function.obj
+src/function.obj: src/function.cpp.obj
 .PHONY : src/function.obj
 
-# target to preprocess a source file
-src/function.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/function.i
+# target to build an object file
+src/function.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/function.cpp.obj
+.PHONY : src/function.cpp.obj
+
+src/function.i: src/function.cpp.i
 .PHONY : src/function.i
 
-# target to generate assembly for a file
-src/function.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/function.s
+# target to preprocess a source file
+src/function.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/function.cpp.i
+.PHONY : src/function.cpp.i
+
+src/function.s: src/function.cpp.s
 .PHONY : src/function.s
 
-# target to build an object file
-src/goods.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/goods.obj
+# target to generate assembly for a file
+src/function.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/function.cpp.s
+.PHONY : src/function.cpp.s
+
+src/goods.obj: src/goods.cpp.obj
 .PHONY : src/goods.obj
 
-# target to preprocess a source file
-src/goods.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/goods.i
+# target to build an object file
+src/goods.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/goods.cpp.obj
+.PHONY : src/goods.cpp.obj
+
+src/goods.i: src/goods.cpp.i
 .PHONY : src/goods.i
 
-# target to generate assembly for a file
-src/goods.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/goods.s
+# target to preprocess a source file
+src/goods.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/goods.cpp.i
+.PHONY : src/goods.cpp.i
+
+src/goods.s: src/goods.cpp.s
 .PHONY : src/goods.s
 
-# target to build an object file
-src/main.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Inventory_management_system.dir\build.make CMakeFiles/Inventory_management_system.dir/src/main.obj
+# target to generate assembly for a file
+src/goods.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\operations.dir\build.make CMakeFiles/operations.dir/src/goods.cpp.s
+.PHONY : src/goods.cpp.s
+
+src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
-# target to preprocess a source file
-src/main.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Inventory_management_system.dir\build.make CMakeFiles/Inventory_management_system.dir/src/main.i
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Inventory_management_system.dir\build.make CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
 .PHONY : src/main.i
 
-# target to generate assembly for a file
-src/main.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Inventory_management_system.dir\build.make CMakeFiles/Inventory_management_system.dir/src/main.s
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Inventory_management_system.dir\build.make CMakeFiles/Inventory_management_system.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
 .PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Inventory_management_system.dir\build.make CMakeFiles/Inventory_management_system.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:

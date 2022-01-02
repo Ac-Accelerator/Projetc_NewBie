@@ -6,7 +6,11 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
 					"projectIndex" : 0,
 					"source" : ".",
 					"targetIndexes" : 
@@ -16,7 +20,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "MinSizeRel",
 			"projects" : 
 			[
 				{
@@ -37,14 +41,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Inventory_management_system::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Inventory_management_system-Debug-8112fdee8e164f4feb66.json",
+					"jsonFile" : "target-Inventory_management_system-MinSizeRel-293c395826d089ee8257.json",
 					"name" : "Inventory_management_system",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "operations::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-operations-Debug-0ac18f79ec4beed26d2c.json",
+					"jsonFile" : "target-operations-MinSizeRel-d04b70677a2aab2d5b0e.json",
 					"name" : "operations",
 					"projectIndex" : 0
 				}

@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/Inventory_management_system.dir/includes_CXX.rsp
 
-CXX_FLAGS = -g
+CXX_FLAGS = -Os -DNDEBUG
 

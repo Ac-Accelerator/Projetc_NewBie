@@ -1,5 +1,6 @@
-CMakeFiles/operations.dir/src/goods.obj: \
- E:\My\ Programs\Projetc_NewBie\C++\Inventory\ Management\ System\src\goods.cpp \
+CMakeFiles/Inventory_management_system.dir/src/main.cpp.obj: \
+ E:\My\ Programs\Projetc_NewBie\C++\Inventory\ Management\ System\src\main.cpp \
+ E:/My\ Programs/Projetc_NewBie/C++/Inventory\ Management\ System/include/function.h \
  E:/My\ Programs/Projetc_NewBie/C++/Inventory\ Management\ System/include/goods.h \
  D:/msys64/mingw64/include/c++/10.3.0/string \
  D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -112,63 +113,4 @@ CMakeFiles/operations.dir/src/goods.obj: \
  D:/msys64/mingw64/include/c++/10.3.0/cerrno \
  D:/msys64/mingw64/include/c++/10.3.0/bits/charconv.h \
  D:/msys64/mingw64/include/c++/10.3.0/bits/functional_hash.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.tcc \
- D:/msys64/mingw64/include/c++/10.3.0/iostream \
- D:/msys64/mingw64/include/c++/10.3.0/ostream \
- D:/msys64/mingw64/include/c++/10.3.0/ios \
- D:/msys64/mingw64/include/c++/10.3.0/bits/ios_base.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/locale_classes.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/locale_classes.tcc \
- D:/msys64/mingw64/include/c++/10.3.0/system_error \
- D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/error_constants.h \
- D:/msys64/mingw64/include/c++/10.3.0/stdexcept \
- D:/msys64/mingw64/include/c++/10.3.0/streambuf \
- D:/msys64/mingw64/include/c++/10.3.0/bits/streambuf.tcc \
- D:/msys64/mingw64/include/c++/10.3.0/bits/basic_ios.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets.h \
- D:/msys64/mingw64/include/c++/10.3.0/cwctype \
- D:/msys64/mingw64/x86_64-w64-mingw32/include/wctype.h \
- D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/ctype_base.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/streambuf_iterator.h \
- D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/ctype_inline.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets.tcc \
- D:/msys64/mingw64/include/c++/10.3.0/bits/basic_ios.tcc \
- D:/msys64/mingw64/include/c++/10.3.0/bits/ostream.tcc \
- D:/msys64/mingw64/include/c++/10.3.0/istream \
- D:/msys64/mingw64/include/c++/10.3.0/bits/istream.tcc \
- D:/msys64/mingw64/include/c++/10.3.0/fstream \
- D:/msys64/mingw64/include/c++/10.3.0/bits/codecvt.h \
- D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/basic_file.h \
- D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++io.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/fstream.tcc \
- D:/msys64/mingw64/include/c++/10.3.0/map \
- D:/msys64/mingw64/include/c++/10.3.0/bits/stl_tree.h \
- D:/msys64/mingw64/include/c++/10.3.0/ext/aligned_buffer.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/stl_map.h \
- D:/msys64/mingw64/include/c++/10.3.0/tuple \
- D:/msys64/mingw64/include/c++/10.3.0/utility \
- D:/msys64/mingw64/include/c++/10.3.0/bits/stl_relops.h \
- D:/msys64/mingw64/include/c++/10.3.0/array \
- D:/msys64/mingw64/include/c++/10.3.0/bits/uses_allocator.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/invoke.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/stl_multimap.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/erase_if.h \
- D:/msys64/mingw64/include/c++/10.3.0/algorithm \
- D:/msys64/mingw64/include/c++/10.3.0/bits/stl_algo.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/algorithmfwd.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/stl_heap.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/stl_tempbuf.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/uniform_int_dist.h \
- D:/msys64/mingw64/include/c++/10.3.0/limits \
- D:/msys64/mingw64/include/c++/10.3.0/iomanip \
- D:/msys64/mingw64/include/c++/10.3.0/locale \
- D:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.h \
- D:/msys64/mingw64/include/c++/10.3.0/ctime \
- D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/time_members.h \
- D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/messages_members.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.tcc \
- D:/msys64/mingw64/include/c++/10.3.0/bits/locale_conv.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/unique_ptr.h \
- D:/msys64/mingw64/include/c++/10.3.0/bits/quoted_string.h \
- D:/msys64/mingw64/include/c++/10.3.0/sstream \
- D:/msys64/mingw64/include/c++/10.3.0/bits/sstream.tcc
+ D:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.tcc

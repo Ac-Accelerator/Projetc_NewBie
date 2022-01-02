@@ -1,32 +1,79 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <map>
 using namespace std;
-const int N = 1010;
-int t;
-int q[N], f[N];
-int main()
+struct node
 {
-    cin >> t;
-    int m = t;
-    while (m--)
+    int sex;
+    string firstname;
+};
+map<string, node> mp;
+bool find(string, string );
+main()
+{
+    int n, t;
+    string firstname, b, secondname, d;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
     {
-        if (m != t - 1)
-            cout << endl;
-        int n;
-        cin >> n;
-        for (int i = 1; i <= n; i++)
-            scanf("%d", &q[i]), f[i] = 1;
-        for (int i = 1; i <= n; i++)
+        cin >> firstname >> secondname;
+        if (secondname[secondname.length() - 1] == 'f')
+            mp[firstname].sex = 2;
+        else if (secondname[secondname.length() - 1] == 'm')
+            mp[firstname].sex = 1;
+        else if (secondname[secondname.length() - 1] == 'n')
         {
-            for (int j = 1; j < i; j++)
+            mp[firstname].sex = 1;
+            string temp = secondname.substr(0, secondname.length() - 4);
+            mp[firstname].firstname = temp;
+        }
+        else if (secondname[secondname.length() - 1] == 'r')
+        {
+            mp[firstname].sex = 2;
+            string temp = secondname.substr(0, secondname.length() - 7);
+            mp[firstname].firstname = temp;
+        }
+    }
+    cin >> t;
+    while (t--)
+    {
+        cin >> firstname >> b >> secondname >> d;
+        if (mp.find(firstname) == mp.end() || mp.find(secondname) == mp.end())
+        {
+            cout << "NA" << endl;
+        }
+        else if (mp[firstname].sex == mp[secondname].sex)
+        {
+            cout << "Whatever" << endl;
+        }
+        else
+        {
+            if (find(firstname, secondname))
             {
-                if (q[j] < q[i])
-                    f[i] = max(f[i], f[j] + 1);
+                cout << "Yes" << endl;
+            }
+            else
+            {
+                cout << "No" << endl;
             }
         }
-        int ans = -1;
-        for (int i = 1; i <= n; i++)
-            ans = max(ans, f[i]);
-        cout << ans << endl;
     }
-    return 0;
+}
+
+bool find(string firstname, string secondname)
+{
+    int fa = 1, fb = 1;
+    for (string sa = firstname; !sa.empty(); sa = mp[sa].firstname, fa++)
+    {
+        fb = 1;
+        for (string sb = secondname; !sb.empty(); sb = mp[sb].firstname, fb++)
+        {
+            if (fa >= 5 && fb >= 5)
+                return 1;
+            if (sa == sb && (fa < 5 || fb < 5))
+            {
+                return 0;
+            }
+        }
+    }
+    return 1;
 }

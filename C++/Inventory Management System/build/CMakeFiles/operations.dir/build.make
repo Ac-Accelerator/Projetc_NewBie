@@ -68,46 +68,46 @@ include CMakeFiles/operations.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/operations.dir/flags.make
 
-CMakeFiles/operations.dir/src/goods.obj: CMakeFiles/operations.dir/flags.make
-CMakeFiles/operations.dir/src/goods.obj: CMakeFiles/operations.dir/includes_CXX.rsp
-CMakeFiles/operations.dir/src/goods.obj: ../src/goods.cpp
-CMakeFiles/operations.dir/src/goods.obj: CMakeFiles/operations.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\My Programs\Projetc_NewBie\C++\Inventory Management System\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/operations.dir/src/goods.obj"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/operations.dir/src/goods.obj -MF CMakeFiles\operations.dir\src\goods.obj.d -o CMakeFiles\operations.dir\src\goods.obj -c "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\goods.cpp"
+CMakeFiles/operations.dir/src/goods.cpp.obj: CMakeFiles/operations.dir/flags.make
+CMakeFiles/operations.dir/src/goods.cpp.obj: CMakeFiles/operations.dir/includes_CXX.rsp
+CMakeFiles/operations.dir/src/goods.cpp.obj: ../src/goods.cpp
+CMakeFiles/operations.dir/src/goods.cpp.obj: CMakeFiles/operations.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\My Programs\Projetc_NewBie\C++\Inventory Management System\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/operations.dir/src/goods.cpp.obj"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/operations.dir/src/goods.cpp.obj -MF CMakeFiles\operations.dir\src\goods.cpp.obj.d -o CMakeFiles\operations.dir\src\goods.cpp.obj -c "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\goods.cpp"
 
-CMakeFiles/operations.dir/src/goods.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/operations.dir/src/goods.i"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\goods.cpp" > CMakeFiles\operations.dir\src\goods.i
+CMakeFiles/operations.dir/src/goods.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/operations.dir/src/goods.cpp.i"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\goods.cpp" > CMakeFiles\operations.dir\src\goods.cpp.i
 
-CMakeFiles/operations.dir/src/goods.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/operations.dir/src/goods.s"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\goods.cpp" -o CMakeFiles\operations.dir\src\goods.s
+CMakeFiles/operations.dir/src/goods.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/operations.dir/src/goods.cpp.s"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\goods.cpp" -o CMakeFiles\operations.dir\src\goods.cpp.s
 
-CMakeFiles/operations.dir/src/function.obj: CMakeFiles/operations.dir/flags.make
-CMakeFiles/operations.dir/src/function.obj: CMakeFiles/operations.dir/includes_CXX.rsp
-CMakeFiles/operations.dir/src/function.obj: ../src/function.cpp
-CMakeFiles/operations.dir/src/function.obj: CMakeFiles/operations.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\My Programs\Projetc_NewBie\C++\Inventory Management System\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/operations.dir/src/function.obj"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/operations.dir/src/function.obj -MF CMakeFiles\operations.dir\src\function.obj.d -o CMakeFiles\operations.dir\src\function.obj -c "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\function.cpp"
+CMakeFiles/operations.dir/src/function.cpp.obj: CMakeFiles/operations.dir/flags.make
+CMakeFiles/operations.dir/src/function.cpp.obj: CMakeFiles/operations.dir/includes_CXX.rsp
+CMakeFiles/operations.dir/src/function.cpp.obj: ../src/function.cpp
+CMakeFiles/operations.dir/src/function.cpp.obj: CMakeFiles/operations.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="E:\My Programs\Projetc_NewBie\C++\Inventory Management System\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/operations.dir/src/function.cpp.obj"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/operations.dir/src/function.cpp.obj -MF CMakeFiles\operations.dir\src\function.cpp.obj.d -o CMakeFiles\operations.dir\src\function.cpp.obj -c "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\function.cpp"
 
-CMakeFiles/operations.dir/src/function.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/operations.dir/src/function.i"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\function.cpp" > CMakeFiles\operations.dir\src\function.i
+CMakeFiles/operations.dir/src/function.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/operations.dir/src/function.cpp.i"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\function.cpp" > CMakeFiles\operations.dir\src\function.cpp.i
 
-CMakeFiles/operations.dir/src/function.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/operations.dir/src/function.s"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\function.cpp" -o CMakeFiles\operations.dir\src\function.s
+CMakeFiles/operations.dir/src/function.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/operations.dir/src/function.cpp.s"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "E:\My Programs\Projetc_NewBie\C++\Inventory Management System\src\function.cpp" -o CMakeFiles\operations.dir\src\function.cpp.s
 
 # Object files for target operations
 operations_OBJECTS = \
-"CMakeFiles/operations.dir/src/goods.obj" \
-"CMakeFiles/operations.dir/src/function.obj"
+"CMakeFiles/operations.dir/src/goods.cpp.obj" \
+"CMakeFiles/operations.dir/src/function.cpp.obj"
 
 # External object files for target operations
 operations_EXTERNAL_OBJECTS =
 
-liboperations.dll: CMakeFiles/operations.dir/src/goods.obj
-liboperations.dll: CMakeFiles/operations.dir/src/function.obj
+liboperations.dll: CMakeFiles/operations.dir/src/goods.cpp.obj
+liboperations.dll: CMakeFiles/operations.dir/src/function.cpp.obj
 liboperations.dll: CMakeFiles/operations.dir/build.make
 liboperations.dll: CMakeFiles/operations.dir/linklibs.rsp
 liboperations.dll: CMakeFiles/operations.dir/objects1.rsp
