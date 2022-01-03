@@ -8,52 +8,32 @@ struct node
 };
 node nodes[2002][2002];
 void dfs(int, int);
-int sum=0;
+int sum = 0;
 main()
 {
-    int m, n;
-    cin >> m >> n;
-    for (int i = 1; i <= m;i++)
-    {
-        for (int j = 1; j <=n;j++)
-        {
-            cin >> nodes[i][j].num;
-        }
-    }
-    for (int i = 1; i <= m;i++)
-    {
-        for (int j = 1; j <=n;j++)
-        {
-            if((!nodes[i][j].done)&&nodes[i][j].num==1)
-            {
-                dfs(i, j);
-                sum++;
-            }
-        }
-    }
-    cout << sum;
+    cout << "我是中文";
 }
-void dfs(int i ,int j)
+void dfs(int i, int j)
 {
-    if (nodes[i][j].done==1)
+    if (nodes[i][j].done == 1)
     {
         return;
     }
     nodes[i][j].done = 1;
-    if(nodes[i+1][j].num==1)
+    if (nodes[i + 1][j].num == 1)
     {
         dfs(i + 1, j);
     }
-    if(nodes[i-1][j].num==1)
+    if (nodes[i - 1][j].num == 1)
     {
         dfs(i - 1, j);
     }
-    if(nodes[i][j+1].num==1)
+    if (nodes[i][j + 1].num == 1)
     {
-        dfs(i, j+1);
+        dfs(i, j + 1);
     }
-    if(nodes[i][j-1].num==1)
+    if (nodes[i][j - 1].num == 1)
     {
-        dfs(i , j-1);
+        dfs(i, j - 1);
     }
 }

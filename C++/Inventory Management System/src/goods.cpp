@@ -10,16 +10,16 @@ Goods::Goods(string G_class, string G_names, string G_brand, double G_prize, dou
     m_class = G_class, m_names = G_names, m_prize = G_prize, m_num = G_num, m_brand = G_brand;
 }
 Goods::Goods() {}
-Goods *Goods::G_Readd(long long *n) //è½½å…¥æ•°æ®done
+Goods *Goods::G_Readd(long long *n) //ÔØÈëÊı¾İdone
 {
     string Class, name, brand;
     long long num, time;
     double prize, cost;
     fstream data("data", ios::in);
     streambuf *oldin = cin.rdbuf(data.rdbuf());
-    cin >> *n; //è¯»å–æ•°æ®å¤§å°
+    cin >> *n; //¶ÁÈ¡Êı¾İ´óĞ¡
     Goods *g = new Goods[*n];
-    for (int i = 0; i < *n; i++) //è½½å…¥æ•°æ®
+    for (int i = 0; i < *n; i++) //ÔØÈëÊı¾İ
     {
         cin >> Class >> name >> brand >> prize >> num >> time >> cost;
         g[i].m_class = Class;
@@ -30,19 +30,19 @@ Goods *Goods::G_Readd(long long *n) //è½½å…¥æ•°æ®done
         g[i].m_time = time;
         g[i].m_cost = cost;
     }
-    cin.rdbuf(oldin); //å°†è¾“å…¥æŒ‡é’ˆè¿”å›ç»™é”®ç›˜
+    cin.rdbuf(oldin); //½«ÊäÈëÖ¸Õë·µ»Ø¸ø¼üÅÌ
     data.close();
     return g;
 }
-Goods *Goods::G_Reads(long long *n) //è¯»å–ç»Ÿè®¡done
+Goods *Goods::G_Reads(long long *n) //¶ÁÈ¡Í³¼Ædone
 {
     string Class, name, brand;
     long long num;
     fstream data("statistic", ios::in);
     streambuf *oldin = cin.rdbuf(data.rdbuf());
-    cin >> *n; //è¯»å–æ•°æ®å¤§å°
+    cin >> *n; //¶ÁÈ¡Êı¾İ´óĞ¡
     Goods *g = new Goods[*n];
-    for (int i = 0; i < *n; i++) //è½½å…¥æ•°æ®
+    for (int i = 0; i < *n; i++) //ÔØÈëÊı¾İ
     {
         cin >> Class >> name >> brand >> num;
         g[i].m_class = Class;
@@ -50,7 +50,7 @@ Goods *Goods::G_Reads(long long *n) //è¯»å–ç»Ÿè®¡done
         g[i].m_brand = brand;
         g[i].m_num = num;
     }
-    cin.rdbuf(oldin); //å°†è¾“å…¥æŒ‡é’ˆè¿”å›ç»™é”®ç›˜
+    cin.rdbuf(oldin); //½«ÊäÈëÖ¸Õë·µ»Ø¸ø¼üÅÌ
     data.close();
     return g;
 }
@@ -60,9 +60,9 @@ Goods *Goods::G_Readl(long long *n)
     string Class, name;
     fstream log("log", ios::in);
     streambuf *oldin = cin.rdbuf(log.rdbuf());
-    cin >> *n; //è¯»å–æ•°æ®å¤§å°
+    cin >> *n; //¶ÁÈ¡Êı¾İ´óĞ¡
     Goods *g = new Goods[*n];
-    for (int i = 0; i < *n; i++) //è½½å…¥æ•°æ®
+    for (int i = 0; i < *n; i++) //ÔØÈëÊı¾İ
     {
         cin >> time >> Class >> name >> profit >> num;
         g[i].m_class = Class;
@@ -71,24 +71,24 @@ Goods *Goods::G_Readl(long long *n)
         g[i].m_profit = profit;
         g[i].m_num = num;
     }
-    sort(g, g + *n, time_compare); //æŒ‰æ—¶é—´æ’åº
-    cin.rdbuf(oldin);              //å°†è¾“å…¥æŒ‡é’ˆè¿”å›ç»™é”®ç›˜
+    sort(g, g + *n, time_compare); //°´Ê±¼äÅÅĞò
+    cin.rdbuf(oldin);              //½«ÊäÈëÖ¸Õë·µ»Ø¸ø¼üÅÌ
     log.close();
     return g;
 }
-void Goods::G_Add() //æ·»åŠ ï¼Œè¿›è´§åŠŸèƒ½done
+void Goods::G_Add() //Ìí¼Ó£¬½ø»õ¹¦ÄÜdone
 {
     string Class, name, brand;
     long long num, time;
     double prize, cost;
-    fstream data("data", ios::out | ios::in); //æ‰“å¼€å­˜æ”¾æ•°æ®çš„æ–‡ä»¶
+    fstream data("data", ios::out | ios::in); //´ò¿ª´æ·ÅÊı¾İµÄÎÄ¼ş
     int n;
     streambuf *oldin = cin.rdbuf(data.rdbuf());
     data.seekg(0, ios::beg);
     cin >> n;
     cin.rdbuf(oldin);
     data.seekg(0, ios::end);
-    cout << "è¯·ä¾æ¬¡è¾“å…¥ï¼šç±»åˆ« åç§° å“ç‰Œ ä»·æ ¼ æ•°é‡ è¿›è´§æ—¶é—´ æˆæœ¬ã€‚ï¼ˆæ•°æ®é—´ä»¥ç©ºæ ¼éš”å¼€ï¼Œ#åœæ­¢ï¼‰" << endl;
+    cout << "ÇëÒÀ´ÎÊäÈë£ºÀà±ğ Ãû³Æ Æ·ÅÆ ¼Û¸ñ ÊıÁ¿ ½ø»õÊ±¼ä ³É±¾¡££¨Êı¾İ¼äÒÔ¿Õ¸ñ¸ô¿ª£¬#Í£Ö¹£©" << endl;
     while (1)
     {
         cin >> Class;
@@ -97,33 +97,33 @@ void Goods::G_Add() //æ·»åŠ ï¼Œè¿›è´§åŠŸèƒ½done
             break;
         }
         cin >> name >> brand >> prize >> num >> time >> cost;
-        streambuf *oldout = cout.rdbuf(data.rdbuf()); //å°†æŒ‡é’ˆæŒ‡å‘æ–°çš„ç¼“å†²åŒºï¼Œå¹¶ä¸”è¿”å›æ—§çš„ç¼“å†²åŒºæŒ‡é’ˆ
+        streambuf *oldout = cout.rdbuf(data.rdbuf()); //½«Ö¸ÕëÖ¸ÏòĞÂµÄ»º³åÇø£¬²¢ÇÒ·µ»Ø¾ÉµÄ»º³åÇøÖ¸Õë
         cout << Class << ' ' << name << ' ' << brand << fixed << setprecision(0) << ' ' << prize << ' ' << num << ' ' << time << ' ' << cost << endl;
         n++;
         data.seekg(0, ios::beg);
         data.flush();
         cout << n;
         data.seekg(0, ios::end);
-        cout.rdbuf(oldout); //è¿˜åŸå±å¹•è¾“å‡º
-        cout << "æˆåŠŸæ·»åŠ å•†å“ä¿¡æ¯!" << endl;
+        cout.rdbuf(oldout); //»¹Ô­ÆÁÄ»Êä³ö
+        cout << "³É¹¦Ìí¼ÓÉÌÆ·ĞÅÏ¢!" << endl;
     }
     data.close();
 }
-void Goods::G_Statistics() //åˆ·æ–°ç»Ÿè®¡æ–‡ä»¶done
+void Goods::G_Statistics() //Ë¢ĞÂÍ³¼ÆÎÄ¼şdone
 {
     map<string, long long> listcache;
     int point = 0;
     long long n;
     Goods *g = G_Readd(&n);
     string *newcache = new string[n];
-    for (int i = 0; i < n; i++) //æ•°æ®æ¨ªå‘å‹ç¼©
+    for (int i = 0; i < n; i++) //Êı¾İºáÏòÑ¹Ëõ
     {
         newcache[i] += g[i].m_class;
         newcache[i] += g[i].m_names;
         newcache[i] += g[i].m_brand;
     }
     datas *lastcache = new datas[n];
-    for (int i = 0; i < n; i++) //çºµå‘å‹ç¼©
+    for (int i = 0; i < n; i++) //×İÏòÑ¹Ëõ
     {
         if (listcache.find(newcache[i]) != listcache.end())
         {
@@ -138,7 +138,7 @@ void Goods::G_Statistics() //åˆ·æ–°ç»Ÿè®¡æ–‡ä»¶done
             lastcache[listcache[newcache[i]]].numb += g[i].m_num;
         }
     }
-    fstream eco("statistic", ios::in | ios::out | ios::trunc); //æ‰“å¼€ç»Ÿè®¡æ–‡ä»¶
+    fstream eco("statistic", ios::in | ios::out | ios::trunc); //´ò¿ªÍ³¼ÆÎÄ¼ş
     streambuf *oldout = cout.rdbuf(eco.rdbuf());
     cout << point << endl;
     for (int i = 0; i < point; i++)
@@ -147,8 +147,8 @@ void Goods::G_Statistics() //åˆ·æ–°ç»Ÿè®¡æ–‡ä»¶done
     }
     cout.rdbuf(oldout);
     eco.close();
-    cout << "æ•°æ®åº“å·²æ›´æ–°" << endl;
-    cout << setw(15) << left << "ç±»åˆ«" << setw(15) << left << "åç§°" << setw(15) << left << "å“ç‰Œ" << setw(15) << left << "æ•°é‡" << endl;
+    cout << "Êı¾İ¿âÒÑ¸üĞÂ" << endl;
+    cout << setw(15) << left << "Àà±ğ" << setw(15) << left << "Ãû³Æ" << setw(15) << left << "Æ·ÅÆ" << setw(15) << left << "ÊıÁ¿" << endl;
     for (int i = 0; i < point; i++)
     {
         cout << setw(15) << left << lastcache[i].Class << setw(15) << left << lastcache[i].name << setw(15) << left << lastcache[i].brand << setw(15) << left << lastcache[i].numb << endl;
@@ -157,13 +157,13 @@ void Goods::G_Statistics() //åˆ·æ–°ç»Ÿè®¡æ–‡ä»¶done
     delete[] lastcache;
     delete[] newcache;
 }
-void Goods::G_Out() //å‡ºè´§åŠŸèƒ½done
+void Goods::G_Out() //³ö»õ¹¦ÄÜdone
 {
     G_Statistics();
     string Class, name;
-    cout << "è¯·è¾“å…¥è¦å‡ºè´§çš„å•†å“ç±»åˆ«:";
+    cout << "ÇëÊäÈëÒª³ö»õµÄÉÌÆ·Àà±ğ:";
     cin >> Class;
-    cout << "è¯·è¾“å…¥è¦å‡ºè´§å•†å“ç±»åˆ«çš„åå­—:";
+    cout << "ÇëÊäÈëÒª³ö»õÉÌÆ·Àà±ğµÄÃû×Ö:";
     cin >> name;
     long long n, num = 0;
     Goods *t = G_Reads(&n);
@@ -178,20 +178,20 @@ void Goods::G_Out() //å‡ºè´§åŠŸèƒ½done
     {
         int outnums;
         long long time;
-        cout << "è¿˜å‰©ä½™" << num << "ä¸ªï¼Œè¯·è¾“å…¥å‡ºè´§çš„æ•°é‡:";
+        cout << "»¹Ê£Óà" << num << "¸ö£¬ÇëÊäÈë³ö»õµÄÊıÁ¿:";
         while (1)
         {
             cin >> outnums;
             if (num < outnums)
             {
-                cout << "è¶…å‡ºï¼è¯·é‡æ–°è¾“å…¥:";
+                cout << "³¬³ö£¡ÇëÖØĞÂÊäÈë:";
             }
             else
             {
-                cout << "è¯·è¾“å…¥å‡ºè´§æ—¥æœŸ:";
+                cout << "ÇëÊäÈë³ö»õÈÕÆÚ:";
                 cin >> time;
                 Goods *g = G_Readd(&n);
-                bool *sign = new bool[n]{0}; //ç”¨ä½œæ ‡è®°æ•°ç»„ï¼Œæ•°å€¼ä¸º0ä¿æŒä¸å˜ï¼Œæ•°å€¼ä¸º1åˆ 
+                bool *sign = new bool[n]{0}; //ÓÃ×÷±ê¼ÇÊı×é£¬ÊıÖµÎª0±£³Ö²»±ä£¬ÊıÖµÎª1É¾
                 long long deletenum = 0;
                 double money = 0;
                 for (int i = 0; i < n; i++)
@@ -245,17 +245,17 @@ void Goods::G_Out() //å‡ºè´§åŠŸèƒ½done
         G_Statistics();
     }
     else
-        cout << "æ²¡æœ‰è¯¥å•†å“" << endl;
+        cout << "Ã»ÓĞ¸ÃÉÌÆ·" << endl;
     cout << endl;
     system("pause");
     delete[] t;
 }
-void Goods::G_Delete() //åˆ é™¤åŠŸèƒ½
+void Goods::G_Delete() //É¾³ı¹¦ÄÜ
 {
     string Class, name;
-    cout << "è¯·è¾“å…¥è¦åˆ é™¤çš„å•†å“ç±»åˆ«:";
+    cout << "ÇëÊäÈëÒªÉ¾³ıµÄÉÌÆ·Àà±ğ:";
     cin >> Class;
-    cout << "è¯·è¾“å…¥è¦åˆ é™¤å•†å“ç±»åˆ«çš„åå­—:";
+    cout << "ÇëÊäÈëÒªÉ¾³ıÉÌÆ·Àà±ğµÄÃû×Ö:";
     cin >> name;
     long long n;
     Goods *g = G_Readd(&n);
@@ -270,7 +270,7 @@ void Goods::G_Delete() //åˆ é™¤åŠŸèƒ½
     }
     if (num == 0)
     {
-        cout << "å•†å“ä¸å­˜åœ¨" << endl;
+        cout << "ÉÌÆ·²»´æÔÚ" << endl;
         system("pause");
         system("cls");
         return;
@@ -285,14 +285,14 @@ void Goods::G_Delete() //åˆ é™¤åŠŸèƒ½
             cout << g[i].m_class << ' ' << g[i].m_names << ' ' << g[i].m_brand << ' ' << fixed << setprecision(0) << g[i].m_prize << ' ' << g[i].m_num << ' ' << g[i].m_time << ' ' << g[i].m_cost << endl;
         }
     }
-    cout.rdbuf(oldout); //è¾“å‡ºæŒ‡é’ˆè¿”å›å±å¹•
+    cout.rdbuf(oldout); //Êä³öÖ¸Õë·µ»ØÆÁÄ»
     newdata.close();
-    cout << "åˆ é™¤æˆåŠŸ" << endl;
+    cout << "É¾³ı³É¹¦" << endl;
     system("pause");
     system("cls");
     delete[] g;
 }
-void Goods::G_Search() //æŸ¥æ‰¾åŠŸèƒ½done
+void Goods::G_Search() //²éÕÒ¹¦ÄÜdone
 {
     string Class, name, brand;
     long long n;
@@ -302,13 +302,13 @@ void Goods::G_Search() //æŸ¥æ‰¾åŠŸèƒ½done
     while (1)
     {
         system("cls");
-        cout << "è¯·é€‰æ‹©æŸ¥æ‰¾çš„æ–¹å¼" << endl
-             << "1.å•†å“ç±»åˆ«" << endl
-             << "2.å•†å“åç§°" << endl
-             << "3.å“ç‰Œ" << endl
-             << "4.è¿›è´§æ—¥æœŸ" << endl
-             << "5.è¿”å›" << endl;
-        cin >> choice; //è¾“å…¥é€‰æ‹©
+        cout << "ÇëÑ¡Ôñ²éÕÒµÄ·½Ê½" << endl
+             << "1.ÉÌÆ·Àà±ğ" << endl
+             << "2.ÉÌÆ·Ãû³Æ" << endl
+             << "3.Æ·ÅÆ" << endl
+             << "4.½ø»õÈÕÆÚ" << endl
+             << "5.·µ»Ø" << endl;
+        cin >> choice; //ÊäÈëÑ¡Ôñ
         if (choice == 5)
         {
             system("cls");
@@ -317,7 +317,7 @@ void Goods::G_Search() //æŸ¥æ‰¾åŠŸèƒ½done
         else if (choice == 1 || choice == 2 || choice == 3 || choice == 4)
         {
             system("cls");
-            cout << "è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„ä¿¡æ¯ï¼š";
+            cout << "ÇëÊäÈëÒª²éÕÒµÄĞÅÏ¢£º";
             string target;
             cin >> target;
             while (target != "#")
@@ -372,25 +372,25 @@ void Goods::G_Search() //æŸ¥æ‰¾åŠŸèƒ½done
                 }
                 if (num == 0)
                 {
-                    cout << "æ‰¾ä¸åˆ°ç›¸å…³ä¿¡æ¯" << endl;
+                    cout << "ÕÒ²»µ½Ïà¹ØĞÅÏ¢" << endl;
                 }
                 else
                 {
-                    cout << "æŸ¥è¯¢åˆ°" << num << "æ¡ä¿¡æ¯,å¦‚ä¸‹" << endl;
-                    cout << setw(15) << left << "ç±»å‹" << setw(15) << left << "åç§°" << setw(15) << left << "å“ç‰Œ" << setw(15) << left << "ä»·æ ¼" << setw(15) << left << "åº“å­˜" << setw(15) << left << "è¿›è´§æ—¥æœŸ" << setw(15) << left << "æˆæœ¬" << endl;
+                    cout << "²éÑ¯µ½" << num << "ÌõĞÅÏ¢,ÈçÏÂ" << endl;
+                    cout << setw(15) << left << "ÀàĞÍ" << setw(15) << left << "Ãû³Æ" << setw(15) << left << "Æ·ÅÆ" << setw(15) << left << "¼Û¸ñ" << setw(15) << left << "¿â´æ" << setw(15) << left << "½ø»õÈÕÆÚ" << setw(15) << left << "³É±¾" << endl;
                     for (int i = 0; i < point; i++)
                     {
                         cout << setw(15) << left << cache[i].m_class << setw(15) << left << cache[i].m_names << setw(15) << left << cache[i].m_brand << setw(15) << left << cache[i].m_prize << setw(15) << left << cache[i].m_num << setw(15) << left << cache[i].m_time << setw(15) << left << cache[i].m_cost << endl;
                     }
                 }
-                cout << "ä¿¡æ¯æ˜¾ç¤ºå®Œæ¯•ï¼ˆæ‚¨å¯ä»¥ç»§ç»­è¾“å…¥å†…å®¹æ¥æ£€ç´¢ï¼Œæˆ–è¾“å…¥#è¿”å›èœå•ï¼‰" << endl;
+                cout << "ĞÅÏ¢ÏÔÊ¾Íê±Ï£¨Äú¿ÉÒÔ¼ÌĞøÊäÈëÄÚÈİÀ´¼ìË÷£¬»òÊäÈë#·µ»Ø²Ëµ¥£©" << endl;
                 cin >> target;
                 system("cls");
             }
         }
         else
         {
-            cout << "é”™è¯¯çš„èœå•é€‰é¡¹,è¯·é‡æ–°è¾“å…¥" << endl;
+            cout << "´íÎóµÄ²Ëµ¥Ñ¡Ïî,ÇëÖØĞÂÊäÈë" << endl;
             system("pause");
         }
     }
@@ -403,27 +403,27 @@ void Goods::G_Profit()
     long long n, time1, time2, point = 0;
     map<string, long long> pointlist;
     Goods *l = G_Readl(&n);
-    Goods *newlist = new Goods[n]; //ä¿å­˜æœ€ç»ˆæ•°æ®çš„æ•°ç»„
+    Goods *newlist = new Goods[n]; //±£´æ×îÖÕÊı¾İµÄÊı×é
     if (n == 0)
     {
-        cout << "æ— è®°å½•" << endl;
+        cout << "ÎŞ¼ÇÂ¼" << endl;
     }
     else
     {
-        cout << "è¯·è¾“å…¥ä½ è¦ç»Ÿè®¡çš„æ—¶é—´èŒƒå›´\nå·²ç»è®°è½½çš„æ—¶é—´èŒƒå›´æ˜¯" << fixed << setprecision(0) << l[0].m_time << '-' << l[n - 1].m_time << endl;
-        cout << "è¯·è¾“å…¥æ—¶é—´ä¸‹é™:";
+        cout << "ÇëÊäÈëÄãÒªÍ³¼ÆµÄÊ±¼ä·¶Î§\nÒÑ¾­¼ÇÔØµÄÊ±¼ä·¶Î§ÊÇ" << fixed << setprecision(0) << l[0].m_time << '-' << l[n - 1].m_time << endl;
+        cout << "ÇëÊäÈëÊ±¼äÏÂÏŞ:";
         cin >> time1;
-        cout << "è¯·è¾“å…¥æ—¶é—´ä¸Šé™:";
+        cout << "ÇëÊäÈëÊ±¼äÉÏÏŞ:";
         cin >> time2;
         if (time1 > time2)
         {
-            cout << "é”™è¯¯";
+            cout << "´íÎó";
         }
         for (int i = 0; i < n; i++)
         {
             if (time1 > time2)
             {
-                cout << "é”™è¯¯" << endl;
+                cout << "´íÎó" << endl;
                 system("pause");
                 break;
             }
@@ -447,13 +447,13 @@ void Goods::G_Profit()
             }
         }
         sort(newlist, newlist + point, profit_compare);
-        cout << "æŸ¥è¯¢åˆ°ä»¥ä¸‹" << point << "ä¸ªä¿¡æ¯" << endl;
-        cout << setw(15) << left << "ç±»å‹" << setw(15) << left << "åç§°" << setw(15) << left << "é”€é‡" << setw(15) << left << "åˆ©æ¶¦" << endl;
+        cout << "²éÑ¯µ½ÒÔÏÂ" << point << "¸öĞÅÏ¢" << endl;
+        cout << setw(15) << left << "ÀàĞÍ" << setw(15) << left << "Ãû³Æ" << setw(15) << left << "ÏúÁ¿" << setw(15) << left << "ÀûÈó" << endl;
         for (int i = 0; i < point; i++)
         {
             cout << setw(15) << left << newlist[i].m_class << setw(15) << left << newlist[i].m_names << setw(15) << left << newlist[i].m_num << setw(15) << left << newlist[i].m_profit << endl;
         }
-        cout << "ä¿¡æ¯æ˜¾ç¤ºç»“æŸ" << endl;
+        cout << "ĞÅÏ¢ÏÔÊ¾½áÊø" << endl;
     }
     system("pause");
     delete[] newlist;
@@ -472,13 +472,13 @@ void Goods::G_Change()
     string Class, name, brand;
     long long time, n, num;
     G_Statistics();
-    cout << "è¯·è¾“å…¥è¦æ›´æ”¹çš„å•†å“ç±»åˆ«:";
+    cout << "ÇëÊäÈëÒª¸ü¸ÄµÄÉÌÆ·Àà±ğ:";
     cin >> Class;
-    cout << "è¯·è¾“å…¥è¦æ›´æ”¹å•†å“çš„åå­—:";
+    cout << "ÇëÊäÈëÒª¸ü¸ÄÉÌÆ·µÄÃû×Ö:";
     cin >> name;
-    cout << "è¯·è¾“å…¥è¦æ›´æ”¹çš„å•†å“çš„å“ç‰Œ:";
+    cout << "ÇëÊäÈëÒª¸ü¸ÄµÄÉÌÆ·µÄÆ·ÅÆ:";
     cin >> brand;
-    cout << "è¯·è¾“å…¥è¦æ›´æ”¹çš„å•†å“çš„è¿›è´§æ—¥æœŸ:";
+    cout << "ÇëÊäÈëÒª¸ü¸ÄµÄÉÌÆ·µÄ½ø»õÈÕÆÚ:";
     cin >> time;
     bool exist = 0;
     Goods *g = G_Readd(&n);
@@ -488,12 +488,12 @@ void Goods::G_Change()
     {
         if (g[i].m_class == Class && g[i].m_names == name && g[i].m_brand == brand && g[i].m_time == time)
         {
-            cout << "å·²ç»æŸ¥è¯¢åˆ°ç›¸å…³å•†å“:\n";
+            cout << "ÒÑ¾­²éÑ¯µ½Ïà¹ØÉÌÆ·:\n";
             cout << setw(15) << left << g[i].m_class << setw(15) << left << g[i].m_names << setw(15) << left << g[i].m_brand << setw(15) << left << g[i].m_prize << setw(15) << left << g[i].m_num << setw(15) << left << g[i].m_time << setw(15) << left << g[i].m_cost << endl;
             exist = 1;
-            cout << "è¯·æ›´æ–°æ•°æ®ï¼šç±»åˆ« åç§° å“ç‰Œ ä»·æ ¼ æ•°é‡ è¿›è´§æ—¶é—´ æˆæœ¬\n";
+            cout << "Çë¸üĞÂÊı¾İ£ºÀà±ğ Ãû³Æ Æ·ÅÆ ¼Û¸ñ ÊıÁ¿ ½ø»õÊ±¼ä ³É±¾\n";
             cin >> g[i].m_class >> g[i].m_names >> g[i].m_brand >> g[i].m_prize >> g[i].m_num >> g[i].m_time >> g[i].m_cost;
-            cout << "æ›´æ–°æˆåŠŸ\n";
+            cout << "¸üĞÂ³É¹¦\n";
             if (g[i].m_num <= 0)
             {
                 sign[i] = 1;
@@ -503,7 +503,7 @@ void Goods::G_Change()
     }
     if (exist == 0)
     {
-        cout << "æœªæŸ¥è¯¢åˆ°ç›¸å…³ä¿¡æ¯" << endl;
+        cout << "Î´²éÑ¯µ½Ïà¹ØĞÅÏ¢" << endl;
     }
     else
     {
@@ -519,7 +519,7 @@ void Goods::G_Change()
             }
         }
         cout.rdbuf(oldout);
-        cout << "æ‰€æœ‰ä¿¡æ¯ä¿®æ”¹å®Œæ¯•\n";
+        cout << "ËùÓĞĞÅÏ¢ĞŞ¸ÄÍê±Ï\n";
     }
     system("pause");
     system("cls");

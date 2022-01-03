@@ -12,15 +12,15 @@ main()
         system("cls");
         if (func == 1)
         {
-            operate.G_Add(); //杩涜揣
+            operate.G_Add(); //进货
         }
         else if (func == 2)
         {
-            operate.G_Out(); //鍑鸿揣鍔熻兘
+            operate.G_Out(); //出货功能
         }
         else if (func == 3)
         {
-            operate.G_Profit(); //鏌ヨ淇℃伅
+            operate.G_Profit(); //查询信息
         }
         else if (func == 4)
         {
