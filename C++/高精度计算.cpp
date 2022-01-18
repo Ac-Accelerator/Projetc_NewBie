@@ -79,6 +79,8 @@ string bigless(string a, string b)
 }
 string bigmuit(string a, string b)
 {
+	if(a=="0"||b=="0")
+		return "0";
 	int lena = a.length(), lenb = b.length();
 	int t = max(lena, lenb);
 	int sum[lena + lenb] = {0}, numa[t] = {0}, numb[t] = {0};

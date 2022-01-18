@@ -1,79 +1,52 @@
 #include <iostream>
-#include <map>
 using namespace std;
-struct node
+int abss(int a)
 {
-    int sex;
-    string firstname;
-};
-map<string, node> mp;
-bool find(string, string );
+    if (a < 0)
+    {
+        a = -a;
+    }
+    return a;
+}
 main()
 {
-    int n, t;
-    string firstname, b, secondname, d;
-    cin >> n;
-    for (int i = 1; i <= n; i++)
+    string s;
+    cin >> s;
+    int a, b, c;
+    cin >> a >> b >> c;
+    int sum = 0;
+    int l = s.length();
+    for (int i = 0; i < l; i++)
     {
-        cin >> firstname >> secondname;
-        if (secondname[secondname.length() - 1] == 'f')
-            mp[firstname].sex = 2;
-        else if (secondname[secondname.length() - 1] == 'm')
-            mp[firstname].sex = 1;
-        else if (secondname[secondname.length() - 1] == 'n')
-        {
-            mp[firstname].sex = 1;
-            string temp = secondname.substr(0, secondname.length() - 4);
-            mp[firstname].firstname = temp;
-        }
-        else if (secondname[secondname.length() - 1] == 'r')
-        {
-            mp[firstname].sex = 2;
-            string temp = secondname.substr(0, secondname.length() - 7);
-            mp[firstname].firstname = temp;
-        }
+        if (s[i] == '1')
+            sum++;
     }
-    cin >> t;
-    while (t--)
+    int ans = 0;
+    if (a <= b)
     {
-        cin >> firstname >> b >> secondname >> d;
-        if (mp.find(firstname) == mp.end() || mp.find(secondname) == mp.end())
+        if (l - sum != sum)
         {
-            cout << "NA" << endl;
+            ans += min(abss(l - 2 * sum) / 2 * (a + c), abss(l - 2 * sum) / 2 * (b));
+            sum = min(sum, l - sum);
         }
-        else if (mp[firstname].sex == mp[secondname].sex)
+        ans += sum * a;
+    }
+    else
+    {
+        if (l - sum != sum)
         {
-            cout << "Whatever" << endl;
+            ans += min(a * min(sum, l - sum), min(sum, l - sum) * (c + b));
+            sum = abss(l - 2 * sum);
+            ans += sum + b;
         }
         else
         {
-            if (find(firstname, secondname))
-            {
-                cout << "Yes" << endl;
-            }
+            if(sum%2==1)
+            ans += min(a + (sum - 1) * b, c + sum * b);
             else
-            {
-                cout << "No" << endl;
-            }
+                ans += sum * b;
         }
     }
-}
 
-bool find(string firstname, string secondname)
-{
-    int fa = 1, fb = 1;
-    for (string sa = firstname; !sa.empty(); sa = mp[sa].firstname, fa++)
-    {
-        fb = 1;
-        for (string sb = secondname; !sb.empty(); sb = mp[sb].firstname, fb++)
-        {
-            if (fa >= 5 && fb >= 5)
-                return 1;
-            if (sa == sb && (fa < 5 || fb < 5))
-            {
-                return 0;
-            }
-        }
-    }
-    return 1;
+    cout << ans;
 }

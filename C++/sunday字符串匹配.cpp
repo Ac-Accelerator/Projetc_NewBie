@@ -21,7 +21,7 @@ int Sunday(string &origin, int &ol, string &target, int &tl)
     int i = 0;
     while (i <= ol - tl) //走到尾部退出循环
     {
-        j = i, k = 0;                                      //origin的下标指向最新的位置                                             //target的下标重置，指向首位
+        j = i, k = 0;                                      // origin的下标指向最新的位置，target的下标重置，指向首位
         while (j < ol && k < tl && origin[j] == target[k]) //如果相同，且未越界，则进行下一个字符的比对
             j++, k++;
 

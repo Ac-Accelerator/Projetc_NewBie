@@ -10,7 +10,6 @@ class Pig(Animail):
 class Human(object):
     def eat(self):
         print('人吃五谷杂粮')
-
 def chi(obj):
     obj.eat()
 

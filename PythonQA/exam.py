@@ -1,16 +1,6 @@
-a,b=map(int,input().split())
-l=[]
-while True:
-    k=input()
-    for i in k:
-        if(i==' '):
-            continue
-        if(i=='-'):
-            
-        l.append(int(i))
-    if len(l)==a:
-        break
-if b in l:
-    print(l.index(b)+1)
-else :
-    print(len(l)+1)
+import math
+a=float(input())
+if a==0:
+    print(f'f({0.0}) = 0.0')
+else:
+    print(f'f({a:.1f}) = {1/a:.1f}')
