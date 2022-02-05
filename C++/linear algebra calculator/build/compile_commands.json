@@ -1,0 +1,27 @@
+[
+{
+  "directory": "E:/My Programs/Projetc_NewBie/C++/linear algebra calculator/build",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -DLA_EXPORTS @CMakeFiles/LA.dir/includes_CXX.rsp -Os -DNDEBUG -o CMakeFiles\\LA.dir\\src\\Base.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\linear algebra calculator\\src\\Base.cpp\"",
+  "file": "E:/My Programs/Projetc_NewBie/C++/linear algebra calculator/src/Base.cpp"
+},
+{
+  "directory": "E:/My Programs/Projetc_NewBie/C++/linear algebra calculator/build",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -DLA_EXPORTS @CMakeFiles/LA.dir/includes_CXX.rsp -Os -DNDEBUG -o CMakeFiles\\LA.dir\\src\\Determinant.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\linear algebra calculator\\src\\Determinant.cpp\"",
+  "file": "E:/My Programs/Projetc_NewBie/C++/linear algebra calculator/src/Determinant.cpp"
+},
+{
+  "directory": "E:/My Programs/Projetc_NewBie/C++/linear algebra calculator/build",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -DLA_EXPORTS @CMakeFiles/LA.dir/includes_CXX.rsp -Os -DNDEBUG -o CMakeFiles\\LA.dir\\src\\Fraction.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\linear algebra calculator\\src\\Fraction.cpp\"",
+  "file": "E:/My Programs/Projetc_NewBie/C++/linear algebra calculator/src/Fraction.cpp"
+},
+{
+  "directory": "E:/My Programs/Projetc_NewBie/C++/linear algebra calculator/build",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe -DLA_EXPORTS @CMakeFiles/LA.dir/includes_CXX.rsp -Os -DNDEBUG -o CMakeFiles\\LA.dir\\src\\Matix.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\linear algebra calculator\\src\\Matix.cpp\"",
+  "file": "E:/My Programs/Projetc_NewBie/C++/linear algebra calculator/src/Matix.cpp"
+},
+{
+  "directory": "E:/My Programs/Projetc_NewBie/C++/linear algebra calculator/build",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/LAC.dir/includes_CXX.rsp -Os -DNDEBUG -o CMakeFiles\\LAC.dir\\src\\main.obj -c \"E:\\My Programs\\Projetc_NewBie\\C++\\linear algebra calculator\\src\\main.cpp\"",
+  "file": "E:/My Programs/Projetc_NewBie/C++/linear algebra calculator/src/main.cpp"
+}
+]

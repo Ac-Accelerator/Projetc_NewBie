@@ -1,1 +1,4 @@
-log(device.getIMEI());
+while(true)
+{
+    
+}

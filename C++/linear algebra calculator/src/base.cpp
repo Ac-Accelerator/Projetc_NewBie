@@ -1,106 +1,163 @@
-#include <algorithm>
-#include <iomanip>
-#include <iostream>
-using namespace std;
-class matix
+#include "Base.h"
+
+Base::Base(/* args */)
 {
-private:
-    string name;
-    int m, n;                   //åˆ†åˆ«æ˜¯è¡Œæ•°ï¼Œåˆ—æ•°
-    long double square[20][20]; //æœ€å¤§å°±20x20å§ï¼Œæ¯•ç«Ÿè¦è¾“å…¥400ä¸ªæ•°å¾ˆç´¯;
-public:
-    matix(/* args */);
-    matix(string, int, int, long double *);
-    long double ValueOfDeterminant(matix); //è®¡ç®—è¡Œåˆ—å¼çš„å€¼
-    void display();//å±•ç¤ºæ­¤çŸ©é˜µ
-};
-matix::matix() {}
-matix::matix(string na, int x, int y, long double *list)
+}
+
+Base::Base(const Base &a) //¿½±´¹¹Ôìº¯Êı
 {
-    m = x, n = y, name = na;
+    m_name = a.m_name;
+    m_m = a.m_m, m_n = a.m_n;
+    for (int i = 1; i <= m_m; i++)
+    {
+        for (int j = 1; j <= m_n; j++)
+        {
+            map[i][j] = a.map[i][j];
+        }
+    }
+}
+
+Base::Base(string na, int m, int n, Fraction *a)
+{
+    m_m = m, m_n = n;
+    m_name = na;
     int point = 0;
-    for (int i = 0; i < x; i++)
-        for (int j = 0; j < y; j++)
-            square[i][j] = list[point++];
-}
-long double matix::ValueOfDeterminant(matix a)
-{
-    if (a.m != a.n)
+    for (int i = 1; i <= m; i++)
     {
-        cout << "error" << endl;
-        return 114514795634134; //å¦‚æœçœŸçš„æ˜¯114514å°±æ˜¯æˆ‘çš„é”…ï¼Œå¯èƒ½æ˜¯å…¨ç¨‹åºå”¯ä¸€ä¸€ä¸ªbug
-    }
-    int cache[n];
-    int Factorial[n + 1] = {0, 1};
-    for (int i = 2; i < n + 1; i++) //è®¡ç®—nçš„é˜¶ä¹˜ï¼Œä»¥æ–¹ä¾¿è¿›è¡Œæ’åˆ—ç»„åˆ
-    {
-        Factorial[i] = i * Factorial[i - 1];
-    }
-    for (int i = 0; i < n; i++) //æ’åˆ—ç»„åˆçš„ç¬¬ä¸€ç§
-    {
-        cache[i] = i;
-    }
-    long double sum = 0;
-    int Reverse_cache[n];
-    for (int i = 0; i < Factorial[n]; i++)
-    {
-        for (int k = 0; k < n; k++)
+        for (int j = 1; j <= n; j++)
         {
-            if (Divide_and_conquer_Reverse(cache, 0, n - 1, Reverse_cache) / 2 == 0) //å¯¹é€†åºå¯¹å¥‡å¶è¿›è¡Œåˆ¤æ–­
-                sum += a.square[k][cache[k]];
-            else
-                sum -= a.square[k][cache[k]];
-        }
-        next_permutation(cache, cache + n);//æ’åˆ—ç»„åˆ
-    }
-    return sum;
-}
-void matix::display()
-{
-    cout << setw(8) << name;
-    for (int i = 0; i < n;i++)
-    {
-        cout<<setw(5)<<
-    }
-}
-void Reverse_Merge(int a[], int s, int m, int e, int cache[], int &sum)
-{
-    int p = 0;
-    int i = s, j = m + 1;
-    while (i <= m && j <= e)
-    {
-        if (a[i] > a[j]) //æ”¹å˜äº†è¿™ä¸ªç¬¦å·ï¼Œä½¿å®ƒç”±å¤§åˆ°å°æ’åˆ—ã€‚
-        {
-            sum += e - j + 1; //å¦å¤–å¢åŠ è¿™ä¸€è¡Œï¼Œæ¯æ‰§è¡Œæ­¤åˆ¤æ–­è¯­å¥éƒ½å¯ä»¥åŠ ä¸Šæ­¤æ•°å¯¹åº”çš„é€†åºæ•°ã€‚
-            cache[p++] = a[i++];
-        }
-        else
-        {
-            cache[p++] = a[j++];
+            map[i][j] = a[point++];
         }
     }
-    while (i <= m)
+}
+
+void Base::RowSwap(int a, int b)
+{
+    if (a > m_m || b > m_m || a < 1 || b < 1)
     {
-        cache[p++] = a[i++];
+        clog << "²Ù×÷Ô½³ö·¶Î§,²»½øĞĞ²Ù×÷\n";
+        return;
     }
-    while (j <= e)
+    for (int i = 1; i <= m_n; i++)
     {
-        cache[p++] = a[j++];
-    }
-    for (int i = 0; i < e - s + 1; i++)
-    {
-        a[s + i] = cache[i];
+        swap(this->map[a][i], this->map[b][i]);
     }
 }
-int Divide_and_conquer_Reverse(int a[], int s, int e, int cache[])
+
+void Base::RowAdd(int a, int b)
 {
-    int sum = 0;
-    if (s < e)
+    if (a > m_m || b > m_m || a < 1 || b < 1)
     {
-        int m = s + (e - s) / 2;
-        Divide_and_conquer_Reverse(a, s, m, cache);
-        Divide_and_conquer_Reverse(a, m + 1, e, cache);
-        Reverse_Merge(a, s, m, e, cache, sum);
+        clog << "²Ù×÷Ô½³ö·¶Î§,²»½øĞĞ²Ù×÷\n";
+        return;
     }
-    return sum;
+
+    for (int i = 1; i <= m_n; i++)
+    {
+        this->map[a][i] += this->map[b][i];
+    }
+}
+
+void Base::RowMinus(int a, int b)
+{
+    if (a > m_m || b > m_m || a < 1 || b < 1)
+    {
+        clog << "²Ù×÷Ô½³ö·¶Î§,²»½øĞĞ²Ù×÷\n";
+        return;
+    }
+    for (int i = 1; i <= m_n; i++)
+    {
+        this->map[a][i] -= this->map[b][i];
+    }
+}
+
+void Base::RowMultiply(int a, Fraction b)
+{
+    if (a > m_m || a < 1)
+    {
+        clog << "²Ù×÷Ô½³ö·¶Î§,²»½øĞĞ²Ù×÷\n";
+        return;
+    }
+
+    for (int i = 1; i <= m_n; i++)
+    {
+        this->map[a][i] *= b;
+    }
+}
+void Base::ColumSwap(int a, int b)
+{
+    if (a > m_n || b > m_n || a < 1 || b < 1)
+    {
+        clog << "²Ù×÷Ô½³ö·¶Î§,²»½øĞĞ²Ù×÷\n";
+        return;
+    }
+    for (int i = 1; i <= m_m; i++)
+    {
+        swap(this->map[i][a], this->map[i][b]);
+    }
+}
+void Base::ColumAdd(int a, int b)
+{
+    if (a > m_n || b > m_n || a < 1 || b < 1)
+    {
+        clog << "²Ù×÷Ô½³ö·¶Î§,²»½øĞĞ²Ù×÷\n";
+        return;
+    }
+    for (int i = 1; i <= m_m; i++)
+    {
+        this->map[i][a] += this->map[i][b];
+    }
+}
+void Base::ColumMinus(int a, int b)
+{
+    if (a > m_n || b > m_n || a < 1 || b < 1)
+    {
+        clog << "²Ù×÷Ô½³ö·¶Î§,²»½øĞĞ²Ù×÷\n";
+        return;
+    }
+    for (int i = 1; i <= m_m; i++)
+    {
+        this->map[i][a] -= this->map[i][b];
+    }
+}
+void Base::ColumMultiply(int a, Fraction b)
+{
+    if (a > m_n || a < 1)
+    {
+        clog << "²Ù×÷Ô½³ö·¶Î§,²»½øĞĞ²Ù×÷\n";
+        return;
+    }
+    for (int i = 1; i <= m_m; i++)
+    {
+        this->map[i][a] *= b;
+    }
+}
+void Base::transpose()
+{
+    int max_ = max(m_m, m_n);
+    for (int i = 1; i < max_; i++)
+    {
+        for (int j = i + 1; j <= max_; j++)
+        {
+            swap(this->map[i][j], this->map[j][i]);
+        }
+    }
+    swap(this->m_m, this->m_n);
+}
+
+void Base::display()
+{
+    cout << "Ãû³Æ:" << left << setw(5) << this->m_name << "´óĞ¡:" << this->m_m << 'X' << this->m_n << endl;
+    for (int i = 1; i <= m_m; i++)
+    {
+        for (int j = 1; j <= m_n; j++)
+        {
+            cout << left << setw(7) << map[i][j].display();
+        }
+        cout << endl;
+    }
+}
+
+Base::~Base()
+{
 }

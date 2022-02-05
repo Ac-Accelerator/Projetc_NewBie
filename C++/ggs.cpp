@@ -1,6 +1,8 @@
 #include <iostream>
+#include <fstream>
 #include <unordered_map>
 #include <cmath>
+#include <ctime>
 using namespace std;
 main()
 {
@@ -12,6 +14,10 @@ main()
     unsigned long long *_2 = new unsigned long long[n+1]();
     unordered_map<unsigned long long, unsigned long long> dict;
     unsigned long long a = 3, b = 3;
+    double t1,t2;
+    t1 = clock_t();
+    fstream f("ggsgcc.txt",ios::out||ios::trunc);
+    streambuf *p=cout.rdbuf(f.rdbuf());
     for (unsigned long long i = 1; i <= n; i++)
     {
         dict.insert({i * i, i});
@@ -37,5 +43,8 @@ main()
         else
             a = a + 1, b = a;
     }
-    cout << "end";
+    t2 = clock_t();
+    cout.rdbuf(p);
+    cout
+        << "end";
 }
