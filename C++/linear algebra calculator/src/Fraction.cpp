@@ -10,16 +10,21 @@ Fraction::Fraction(string a) //°´ÕÕÐ¡Êý£¬·ÖÊý¸ñÊ½´«Èë£¬Èô¼ì²âµ½Ð¡Êýµã£¬Ôò°´Ð¡Êý´
 {
     molecular = 0;
     denominator = 1;
+    positive=1;
     int i, len = a.length(); //Ö¸Õë
     string::size_type po = a.find(".");
     if (po != string::npos)
     {
+        if (a[0] == '-')
+        {
+            positive = 0;
+        }
         for (int i = 0; i < po; i++)
         {
             if (isdigit(a[i]))
                 molecular = molecular * 10 + a[i] - '0';
         }
-        for (int i = po + 1; i < a.length(); i++)
+        for (int i = po + 1; i < len; i++)
         {
             if (isdigit(a[i]))
             {
