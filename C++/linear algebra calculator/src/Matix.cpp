@@ -68,7 +68,7 @@ Matix Matix::adjoint()
             B.map[j][i] = temp.cofactor(i, j).calculate();
             if ((i + j) % 2)
             {
-                B.map[i][j] *= -1;
+                B.map[j][i] *= -1;
             }
         }
     }

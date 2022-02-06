@@ -6,7 +6,7 @@ Fraction::Fraction(const Fraction &a) //拷贝构造函数
     molecular = a.molecular;
     positive = a.positive;
 }
-Fraction::Fraction(string a) //按照"num1/num2"格式传入,不合法的分数自动转换为1并且报错。
+Fraction::Fraction(string a) //按照小数，分数格式传入，若检测到小数点，则按小数处理,不合法的分数自动转换为1并且报错。
 {
     molecular = 0;
     denominator = 1;
