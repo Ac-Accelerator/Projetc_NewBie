@@ -8,12 +8,9 @@ private:
     /* data */
     int molecular, denominator; //分子，分母
     bool positive = 1;          //是否正数
-
 public:
     Fraction(string);         // string构造函数
     Fraction(bool, int, int); //是否正数，分子，分母
-    template <class T>
-    Fraction(T);
     Fraction(int);
     Fraction();
     Fraction(const Fraction &);//拷贝构造函数

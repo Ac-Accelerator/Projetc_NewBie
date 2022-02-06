@@ -8,32 +8,52 @@ Fraction::Fraction(const Fraction &a) //拷贝构造函数
 }
 Fraction::Fraction(string a) //按照"num1/num2"格式传入,不合法的分数自动转换为1并且报错。
 {
-    denominator = 1;
     molecular = 0;
-    int i, len = a.length();  //指针
-    for (i = 0; i < len; i++) //读取分子
+    denominator = 1;
+    int i, len = a.length(); //指针
+    string::size_type po = a.find(".");
+    if (po != string::npos)
     {
-        if (isdigit(a[i]))
-            molecular = molecular * 10 + a[i] - '0';
-        else if (a[i] == '-')
+        for (int i = 0; i < po; i++)
         {
-            positive = !positive;
+            if (isdigit(a[i]))
+                molecular = molecular * 10 + a[i] - '0';
         }
-        else if (a[i] == '/')
-            break;
-    }
-    if (i != len) //如果有分母
-    {
-        denominator = 0;
-        for (; i < len; i++)
+        for (int i = po + 1; i < a.length(); i++)
         {
             if (isdigit(a[i]))
             {
-                denominator = denominator * 10 + a[i] - '0';
+                molecular = molecular * 10 + a[i] - '0';
+                denominator *= 10;
             }
+        }
+    }
+    else
+    {
+        for (i = 0; i < len; i++) //读取分子
+        {
+            if (isdigit(a[i]))
+                molecular = molecular * 10 + a[i] - '0';
             else if (a[i] == '-')
             {
                 positive = !positive;
+            }
+            else if (a[i] == '/')
+                break;
+        }
+        if (i != len) //如果有分母
+        {
+            denominator = 0;
+            for (; i < len; i++)
+            {
+                if (isdigit(a[i]))
+                {
+                    denominator = denominator * 10 + a[i] - '0';
+                }
+                else if (a[i] == '-')
+                {
+                    positive = !positive;
+                }
             }
         }
     }
@@ -77,29 +97,6 @@ Fraction::Fraction(bool p, int m = 0, int d = 1) //分子，分母，正负号
         clog << "存在分母为0的分数，请进行输入检查\n";
         denominator = 1;
         molecular = 1;
-    }
-}
-
-template <class T>
-Fraction::Fraction(T a)
-{
-    positive = 1;
-    if (a < 0)
-    {
-        positive = 0;
-    }
-    molecular = 0, denominator = 1;
-    while (abs(a - int(a)) >= 0.000001) //精度
-    {
-        a *= 10;
-        denominator *= 10;
-    }
-    molecular = abs(a);
-    int GCD = GreatestCommonDivisor(molecular, denominator);
-    if (GCD != 1)
-    {
-        molecular /= GCD;
-        denominator /= GCD;
     }
 }
 
